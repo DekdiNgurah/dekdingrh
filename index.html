@@ -62,10 +62,10 @@
 
                     <div class="w-full">
                         <ul class="flex lg:flex-row flex-col lg:justify-between lg:items-center space-y-4 lg:space-y-0">
-                            <li class="mb-0"><a href="javascript:void(0)"
+                            <li class="mb-0"><a href="#home"
                                     class="text-[23px] uppercase font-smooch-sans font-semibold text-[var(--color-text)] hover:underline">Home</a>
                             </li>
-                            <li class=""><a href="javascript:void(0)"
+                            <li class=""><a href="#about"
                                     class="text-[23px] uppercase font-smooch-sans font-semibold text-[var(--color-text)] hover:underline">about
                                     me</a>
                             </li>
@@ -78,9 +78,8 @@
                             <li class=""><a href="javascript:void(0)"
                                     class="text-[23px] uppercase font-smooch-sans font-semibold text-[var(--color-text)] hover:underline">certificates</a>
                             </li>
-                            <li class=""><a href="javascript:void(0)"
-                                    class="text-[23px] uppercase font-smooch-sans font-semibold text-[var(--color-text)] hover:underline">contact
-                                    me</a>
+                            <li><a href="#contacts"
+                                    class="text-[23px] uppercase font-smooch-sans font-semibold text-[var(--color-text)] hover:underline">contact</a>
                             </li>
                         </ul>
                     </div>
@@ -154,7 +153,7 @@
         </div>
     </nav>
 
-    <section class="pt-24 md:pt-32 px-5 sm:px-8 md:px-12 lg:px-0">
+    <section id="home" class="pt-24 md:pt-32 px-5 sm:px-8 md:px-12 lg:px-0">
         <div class="lg:px-28 max-w-screen-2xl mx-auto text-center relative">
             <div class="absolute inset-0">
                 <p
@@ -185,14 +184,14 @@
                                 LET'S CONNECT!
                             </h1>
                             <div class="flex justify-end w-full">
-                                <span
+                                <a href="#contacts"
                                     class="flex mt-4 md:px-2 lg:px-4 md:py-2 lg:py-4 border-2 border-[var(--color-text)] rounded-full w-fit rotate-[25deg] cursor-pointer hover:rotate-0 transition duration-300 ease-out">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24">
                                         <path fill="none" stroke="#333333" stroke-linecap="round"
                                             stroke-linejoin="round" d="M12.013 3L12 20.789m7-6.776L12 21l-7-6.988"
                                             stroke-width="1" />
                                     </svg>
-                                </span>
+                                </a>
                             </div>
                         </div>
                         <div class="">
@@ -293,8 +292,8 @@
         </div>
     </section>
 
-    <section
-        class="mt-5 md:pt-5 lg:mt-16 px-5 md:px-12 lg:px-28 flex flex-col lg:flex-row justify-between w-full lg:gap-44">
+    <section id="about"
+        class="pt-5 md:pt-5 lg:pt-16 px-5 md:px-12 lg:px-28 flex flex-col lg:flex-row justify-between w-full lg:gap-44">
         <div class="relative w-fit h-fit">
             <h1 class="text-[50px] md:text-[60px] lg:text-[110px] gradient-text uppercase w-fit">about</h1>
             <div class="absolute right-0 bottom-2 md:bottom-0">
@@ -343,7 +342,7 @@
         <div class="w-full flex flex-col items-center">
             <h1
                 class="text-[50px] leading-[50px] md:leading-none md:text-[60px] lg:text-[100px] gradient-text font-medium w-fit text-center">
-                FEATURED
+                FEATURED <br class="block md:hidden">
                 PROJECTS</h1>
             <p
                 class="font-smooch-sans text-[20px] md:text-[22px] lg:text-[25px] text-center font-semibold text-[var(--color-text)]">
@@ -378,8 +377,7 @@
                                 class="w-full h-full object-cover">
                         </div>
                         <div class="pt-4">
-                            <h3
-                                class="gradient-text text-[25px] md:text-[30px] lg:text-[40px] w-fit uppercase font-semibold">
+                            <h3 class="gradient-text text-[25px] md:text-[30px] lg:text-[40px] w-fit uppercase">
                                 AJIK BALI
                                 TRANSPORT</h3>
                             <p class="text-[20px] md:text-[22px] lg:text-[25px] font-smooch-sans font-medium">A
@@ -403,8 +401,7 @@
                                 class="w-full h-full object-cover">
                         </div>
                         <div class="pt-4">
-                            <h3
-                                class="gradient-text text-[25px] md:text-[30px] lg:text-[40px] w-fit uppercase font-semibold">
+                            <h3 class="gradient-text text-[25px] md:text-[30px] lg:text-[40px] w-fit uppercase">
                                 AJIK BALI
                                 TRANSPORT</h3>
                             <p class="text-[20px] md:text-[22px] lg:text-[25px] font-smooch-sans font-medium">A
@@ -428,8 +425,7 @@
                                 class="w-full h-full object-cover">
                         </div>
                         <div class="pt-4">
-                            <h3
-                                class="gradient-text text-[25px] md:text-[30px] lg:text-[40px] w-fit uppercase font-semibold">
+                            <h3 class="gradient-text text-[25px] md:text-[30px] lg:text-[40px] w-fit uppercase">
                                 AJIK BALI
                                 TRANSPORT</h3>
                             <p class="text-[20px] md:text-[22px] lg:text-[25px] font-smooch-sans font-medium">A
@@ -451,9 +447,9 @@
 
         <div class="flex items-center justify-center w-full mt-8 md:mt-14 lg:mt-20">
             <a href="javascript:void(0)"
-                class="group px-6 py-2 md:px-10 md:py-2 bg-[var(--color-background)] text-[#eeeeee] font-smooch-sans text-xl md:text-2xl hover:bg-gray-900 transition-all duration-300 flex items-center gap-2">
+                class="group px-6 py-2 md:px-10 md:py-2 bg-[var(--color-background)] text-[#eeeeee] font-smooch-sans text-xl md:text-2xl hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 w-fit">
                 See all projects
-                <span class="rotate-[-35deg] group:rotate-0 transition duration-300 ease-out">
+                <span class="rotate-[-35deg] group-hover:rotate-0 transition duration-300 ease-out">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-auto" viewBox="0 0 24 24">
                         <path fill="currentColor"
                             d="M4 12h12.25L11 6.75l.66-.75l6.5 6.5l-6.5 6.5l-.66-.75L16.25 13H4z" />
@@ -467,7 +463,7 @@
         <div class="w-full flex flex-col items-center">
             <h1
                 class="text-[50px] leading-[50px] md:leading-none md:text-[60px] lg:text-[100px] gradient-text font-medium w-fit text-center">
-                SERVICES I PROVIDE</h1>
+                SERVICES I <br class="block md:hidden"> PROVIDE</h1>
             <p
                 class="font-smooch-sans text-[20px] md:text-[22px] lg:text-[25px] text-center font-semibold text-[var(--color-text)]">
                 Creating visually appealing and functional websites tailored to the client's needs and goals providing a
@@ -478,49 +474,405 @@
             <div class="w-full md:w-1/2 lg:w-1/3 mt-8 md:p-4">
                 <div class="shadow p-6 h-full flex flex-col">
                     <img src="assets/webdevelopment.webp" alt="" class="w-9 h-9 lg:w-12 lg:h-12">
-                    <h2 class="text-[25px] md:text-[30px] md:mb-4 font-righteous text-[var(--color-text)] w-fit uppercase">WEB DEVELOPMENT SERVICE
+                    <h2
+                        class="text-[25px] md:text-[30px] md:mb-4 font-righteous text-[var(--color-text)] w-fit uppercase">
+                        WEB DEVELOPMENT SERVICE
                     </h2>
-                    <p class="flex-grow text-[20px] md:text-[22px] lg:text-[25px] font-smooch-sans font-medium">I build complete websites from front to back, combining clean responsive designs with secure and efficient back-end systems. Every project is crafted to run smoothly and deliver great performance.</p>
+                    <p class="flex-grow text-[20px] md:text-[22px] lg:text-[25px] font-smooch-sans font-medium">I build
+                        complete websites from front to back, combining clean responsive designs with secure and
+                        efficient back-end systems. Every project is crafted to run smoothly and deliver great
+                        performance.</p>
                 </div>
             </div>
             <div class="w-full md:w-1/2 lg:w-1/3 mt-4 md:p-4">
                 <div class="shadow p-6 h-full flex flex-col">
                     <img src="assets/uiux.webp" alt="" class="w-9 h-9 lg:w-12 lg:h-12">
-                    <h2 class="text-[25px] md:text-[30px] md:mb-4 font-righteous text-[var(--color-text)] w-fit uppercase">WEB DESIGN
+                    <h2
+                        class="text-[25px] md:text-[30px] md:mb-4 font-righteous text-[var(--color-text)] w-fit uppercase">
+                        WEB DESIGN
                         UI/UX</h2>
-                    <p class="flex-grow text-[20px] md:text-[22px] lg:text-[25px] font-smooch-sans font-medium">I design modern and user-friendly interfaces that look great and are easy to navigate. Every element is made to create a smooth and enjoyable user experience.</p>
+                    <p class="flex-grow text-[20px] md:text-[22px] lg:text-[25px] font-smooch-sans font-medium">I design
+                        modern and user-friendly interfaces that look great and are easy to navigate. Every element is
+                        made to create a smooth and enjoyable user experience.</p>
                 </div>
             </div>
             <div class="w-full md:w-1/2 lg:w-1/3 mt-4 md:p-4">
                 <div class="shadow p-6 h-full flex flex-col">
                     <img src="assets/weboptimization.webp" alt="" class="w-9 h-9 lg:w-12 lg:h-12">
-                    <h2 class="text-[25px] md:text-[30px] md:mb-4 font-righteous text-[var(--color-text)] w-fit uppercase">WEB
+                    <h2
+                        class="text-[25px] md:text-[30px] md:mb-4 font-righteous text-[var(--color-text)] w-fit uppercase">
+                        WEB
                         OPTIMIZATION & MAINTENANCE</h2>
-                    <p class="flex-grow text-[20px] md:text-[22px] lg:text-[25px] font-smooch-sans font-medium">I keep websites fast, secure, and up to date. From improving performance to fixing bugs and optimizing SEO, I make sure every website stays in top condition.</p>
+                    <p class="flex-grow text-[20px] md:text-[22px] lg:text-[25px] font-smooch-sans font-medium">I keep
+                        websites fast, secure, and up to date. From improving performance to fixing bugs and optimizing
+                        SEO, I make sure every website stays in top condition.</p>
                 </div>
             </div>
 
             <div class="w-full md:w-1/2 lg:w-1/3 mt-4 md:p-4">
                 <div class="shadow p-6 h-full flex flex-col">
                     <img src="assets/webdeployment.webp" alt="" class="w-9 h-9 lg:w-12 lg:h-12">
-                    <h2 class="text-[25px] md:text-[30px] md:mb-4 font-righteous text-[var(--color-text)] w-fit uppercase">DEVELOPMENT & hosting
+                    <h2
+                        class="text-[25px] md:text-[30px] md:mb-4 font-righteous text-[var(--color-text)] w-fit uppercase">
+                        DEVELOPMENT & hosting
                     </h2>
-                    <p class="flex-grow text-[20px] md:text-[22px] lg:text-[25px] font-smooch-sans font-medium">I handle the entire deployment process, from setting up hosting and domains to configuring servers and SSL certificates. Every website is launched smoothly and optimized for stable performance online.</p>
+                    <p class="flex-grow text-[20px] md:text-[22px] lg:text-[25px] font-smooch-sans font-medium">I handle
+                        the entire deployment process, from setting up hosting and domains to configuring servers and
+                        SSL certificates. Every website is launched smoothly and optimized for stable performance
+                        online.</p>
                 </div>
             </div>
             <div class="w-full md:w-1/2 lg:w-1/3 mt-4 md:p-4">
                 <div class="shadow p-6 h-full flex flex-col">
                     <img src="assets/customweb.webp" alt="" class="w-9 h-9 lg:w-12 lg:h-12">
-                    <h2 class="text-[25px] md:text-[30px] md:mb-4 font-righteous text-[var(--color-text)] w-fit uppercase">CUSTOM WEB SOLUTIONS</h2>
-                    <p class="flex-grow text-[20px] md:text-[22px] lg:text-[25px] font-smooch-sans font-medium">I develop custom web applications tailored to specific needs, such as booking systems, dashboards, e-commerce, or other unique platforms. Each solution is designed to be functional, scalable, and easy to use.</p>
+                    <h2
+                        class="text-[25px] md:text-[30px] md:mb-4 font-righteous text-[var(--color-text)] w-fit uppercase">
+                        CUSTOM WEB SOLUTIONS</h2>
+                    <p class="flex-grow text-[20px] md:text-[22px] lg:text-[25px] font-smooch-sans font-medium">I
+                        develop custom web applications tailored to specific needs, such as booking systems, dashboards,
+                        e-commerce, or other unique platforms. Each solution is designed to be functional, scalable, and
+                        easy to use.</p>
                 </div>
             </div>
             <div class="w-full md:w-1/2 lg:w-1/3 mt-4 md:p-4">
                 <div class="shadow p-6 h-full flex flex-col">
                     <img src="assets/consultation.webp" alt="" class="w-9 h-9 lg:w-12 lg:h-12">
-                    <h2 class="text-[25px] md:text-[30px] md:mb-4 font-righteous text-[var(--color-text)] w-fit uppercase">consultation & support</h2>
-                    <p class="flex-grow text-[20px] md:text-[22px] lg:text-[25px] font-smooch-sans font-medium">I provide project consultation and ongoing support to help clients make the right technical decisions. From planning to post-launch maintenance, I ensure every website continues to grow and perform well.</p>
+                    <h2
+                        class="text-[25px] md:text-[30px] md:mb-4 font-righteous text-[var(--color-text)] w-fit uppercase">
+                        consultation & support</h2>
+                    <p class="flex-grow text-[20px] md:text-[22px] lg:text-[25px] font-smooch-sans font-medium">I
+                        provide project consultation and ongoing support to help clients make the right technical
+                        decisions. From planning to post-launch maintenance, I ensure every website continues to grow
+                        and perform well.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative mt-20 lg:mt-28 px-5 md:px-12 lg:px-28 w-full">
+        <div class="w-full flex flex-col items-center">
+            <h1
+                class="text-[50px] leading-[50px] md:leading-none md:text-[60px] lg:text-[100px] gradient-text font-medium w-fit text-center">
+                MILESTONES & <br> CERTIFICATES</h1>
+            <p
+                class="font-smooch-sans text-[20px] md:text-[22px] lg:text-[25px] text-center font-semibold text-[var(--color-text)]">
+                A showcase of my journey through various projects, competitions, and professional activities. Each
+                certificate represents a milestone in my growth and continuous learning as a developer.</p>
+        </div>
+
+        <div class="relative mt-10 lg:mt-16">
+            <!-- Slider controls (small & large screens) -->
+            <button id="certif-prev"
+                class="absolute z-20 left-0 top-1/2 -translate-y-1/2 md:left-0 lg:left-[-25px] py-2 px-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100 transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="#333333" d="M14 17.308L8.692 12L14 6.692l.708.708l-4.6 4.6l4.6 4.6z" />
+                </svg>
+            </button>
+
+            <button id="certif-next"
+                class="absolute z-20 right-0 top-1/2 -translate-y-1/2 md:right-0 lg:right-[-25px] py-2 px-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100 transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="#333333" d="m13.292 12l-4.6-4.6l.708-.708L14.708 12L9.4 17.308l-.708-.708z" />
+                </svg>
+            </button>
+
+            <!-- Horizontal slider container -->
+            <div id="certificate-slider" class="w-full hide-x overflow-x-auto snap-x snap-mandatory scroll-smooth px-2">
+                <div class="flex gap-8 items-start w-max">
+                    <!-- Card 1 -->
+                    <article class="snap-start shrink-0 min-w-[300px] max-w-[300px] md:min-w-[555px] flex flex-col">
+                        <div class="w-full h-auto overflow-hidden rounded p-2 md:p-5 bg-white shadow">
+                            <img src="assets/uiux-sifest.webp" alt="Certificate" class="w-full h-full object-cover">
+                        </div>
+                        <div class="pt-4">
+                            <h3 class="gradient-text text-[25px] md:text-[30px] lg:text-[40px] w-fit uppercase">
+                                ui/ux competition</h3>
+                            <p class="text-[20px] md:text-[22px] lg:text-[25px] font-smooch-sans font-medium">
+                                I am a participant in the UI/UX competition with the theme "The Art of Symphony:
+                                Designing User Journeys." This competition is organized by Sriwijaya University.</p>
+                        </div>
+                    </article>
+
+                    <article class="snap-start shrink-0 min-w-[300px] max-w-[300px] md:min-w-[555px] flex flex-col">
+                        <div class="w-full h-auto overflow-hidden rounded p-2 md:p-5 bg-white shadow">
+                            <img src="assets/eytho2.webp" alt="Certificate" class="w-full h-full object-cover">
+                        </div>
+                        <div class="pt-4">
+                            <h3 class="gradient-text text-[25px] md:text-[30px] lg:text-[40px] w-fit uppercase">
+                                web design competition</h3>
+                            <p class="text-[20px] md:text-[22px] lg:text-[25px] font-smooch-sans font-medium">
+                                I'm one of the participants of Web Design Competition. Here I got the 3rd Champion. This
+                                competition is organized by Elizabeth International.</p>
+                        </div>
+                    </article>
+
+                    <article class="snap-start shrink-0 min-w-[300px] max-w-[300px] md:min-w-[555px] flex flex-col">
+                        <div class="w-full h-auto overflow-hidden rounded p-2 md:p-5 bg-white shadow">
+                            <img src="assets/instiki.webp" alt="Certificate" class="w-full h-full object-cover">
+                        </div>
+                        <div class="pt-4">
+                            <h3 class="gradient-text text-[25px] md:text-[30px] lg:text-[40px] w-fit uppercase">
+                                web design competition</h3>
+                            <p class="text-[20px] md:text-[22px] lg:text-[25px] font-smooch-sans font-medium">
+                                Besides winning the 3rd Champion title, I also joining other web design competition that
+                                organized by Institut Bisnis dan Teknologi Indonesia (INSTIKI).</p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="flex items-center justify-center w-full mt-8 md:mt-14 lg:mt-20">
+            <a href="javascript:void(0)"
+                class="group px-6 py-2 md:px-10 md:py-2 bg-[var(--color-background)] text-[#eeeeee] font-smooch-sans text-xl md:text-2xl hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 w-fit">
+                See all certificates
+                <span class="rotate-[-35deg] group-hover:rotate-0 transition duration-300 ease-out">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-auto" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M4 12h12.25L11 6.75l.66-.75l6.5 6.5l-6.5 6.5l-.66-.75L16.25 13H4z" />
+                    </svg>
+                </span>
+            </a>
+        </div>
+    </section>
+
+    <section id="contacts" class="py-16 md:py-20 lg:py-24 mt-20 lg:mt-28 px-4 md:px-8 lg:px-14 bg-[var(--color-background)] w-full">
+
+        <div class="mask overflow-hidden">
+            <div id="r1"
+                class="move-track flex gap-8 md:gap-16 lg:gap-28 font-smooch-sans uppercase text-[var(--color-white)] text-[16px] md:text-[20px] lg:text-[25px] font-semibold">
+                <h2>instagram</h2>
+                <h2>whatsapp</h2>
+                <h2>linkedin</h2>
+                <h2>github</h2>
+
+                <h2>instagram</h2>
+                <h2>whatsapp</h2>
+                <h2>linkedin</h2>
+                <h2>github</h2>
+
+                <h2>instagram</h2>
+                <h2>whatsapp</h2>
+                <h2>linkedin</h2>
+                <h2>github</h2>
+
+                <h2>instagram</h2>
+                <h2>whatsapp</h2>
+                <h2>linkedin</h2>
+                <h2>github</h2>
+            </div>
+        </div>
+
+        <div class="mask overflow-hidden mt-3 md:mt-4 lg:mt-5 flex justify-end">
+            <div id="r2"
+                class="move-track flex gap-8 md:gap-16 lg:gap-28 font-smooch-sans uppercase text-[var(--color-white)] text-[16px] md:text-[20px] lg:text-[25px] font-semibold">
+                <h2>instagram</h2>
+                <h2>whatsapp</h2>
+                <h2>linkedin</h2>
+                <h2>github</h2>
+
+                <h2>instagram</h2>
+                <h2>whatsapp</h2>
+                <h2>linkedin</h2>
+                <h2>github</h2>
+
+                <h2>instagram</h2>
+                <h2>whatsapp</h2>
+                <h2>linkedin</h2>
+                <h2>github</h2>
+
+                <h2>instagram</h2>
+                <h2>whatsapp</h2>
+                <h2>linkedin</h2>
+                <h2>github</h2>
+            </div>
+        </div>
+
+        <div class="flex justify-center mt-6 md:mt-8 lg:mt-10">
+            <h1 class="uppercase tracking-wide text-center gradient-text2 w-fit text-[60px] md:text-[120px] lg:text-[190px] leading-tight">let's talk in</h1>
+        </div>
+
+        <div class="px-4 md:px-6 lg:px-10 mt-6 md:mt-8">
+            <div class="flex flex-col md:flex-row gap-3 md:gap-4 lg:gap-0 md:justify-between flex-wrap">
+                <a href="javascript:void(0)"
+                    class="uppercase font-smooch-sans font-medium text-[20px] md:text-[28px] lg:text-[40px] bg-[var(--color-white)] px-6 md:px-10 lg:px-14 py-1 md:py-2 lg:py-2 border hover:bg-gray-300 transition duration-300 rounded-full text-center">
+                    instagram
+                </a>
+
+                <a href="javascript:void(0)"
+                    class="uppercase font-smooch-sans font-medium text-[20px] md:text-[28px] lg:text-[40px] bg-[var(--color-white)] px-6 md:px-10 lg:px-14 py-1 md:py-2 lg:py-2 border hover:bg-gray-300 transition duration-300 rounded-full text-center">
+                    whatsapp
+                </a>
+
+                <a href="javascript:void(0)"
+                    class="uppercase font-smooch-sans font-medium text-[20px] md:text-[28px] lg:text-[40px] bg-[var(--color-white)] px-6 md:px-10 lg:px-14 py-1 md:py-2 lg:py-2 border hover:bg-gray-300 transition duration-300 rounded-full text-center">
+                    linkedin
+                </a>
+
+                <a href="javascript:void(0)"
+                    class="uppercase font-smooch-sans font-medium text-[20px] md:text-[28px] lg:text-[40px] bg-[var(--color-white)] px-6 md:px-10 lg:px-14 py-1 md:py-2 lg:py-2 border hover:bg-gray-300 transition duration-300 rounded-full text-center">
+                    github
+                </a>
+
+                <a href="#contactMe"
+                    class="uppercase font-smooch-sans font-medium text-[20px] md:text-[28px] lg:text-[40px] border border-[var(--color-white)] px-6 md:px-10 lg:px-14 py-1 md:py-2 lg:py-2 hover:bg-[var(--color-white)] hover:text-[var(--color-text)] text-[var(--color-white)] transition duration-300 rounded-full text-center">
+                    contact us
+                </a>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between gap-4 md:gap-0 mt-6 md:mt-8">
+                <p class="font-smooch-sans uppercase text-[16px] md:text-[18px] lg:text-[25px] text-[var(--color-white)]">&copy;
+                    <strong>dekdingrh.</strong> 2025 all right reserved.
+                </p>
+
+                <p class="font-smooch-sans uppercase text-[16px] md:text-[18px] lg:text-[25px] text-[var(--color-white)]">by dekdi ngurah.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contactMe" class="mt-12 md:mt-20 lg:mt-28 px-4 md:px-8 lg:px-28 pb-12 md:pb-16 lg:pb-20">
+        <div class="w-full flex flex-col items-center">
+            <h1
+                class="text-[50px] leading-[40px] md:leading-none md:text-[60px] lg:text-[100px] gradient-text uppercase font-medium w-fit text-center">
+                Contact me</h1>
+            <p
+                class="font-smooch-sans text-[20px] md:text-[22px] lg:text-[25px] text-center font-semibold text-[var(--color-text)] mt-2 md:mt-3 lg:mt-4 max-w-2xl">
+                Contact me to build cooperation between us. I am open to every message I receive!</p>
+        </div>
+
+        <div class="grid lg:grid-cols-[3fr_2fr] mt-8 md:mt-12 lg:mt-16 gap-6 md:gap-8">
+            <form class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+
+                <div class="flex flex-col justify-start">
+                    <label for="input-name"
+                        class="block uppercase text-[var(--color-text)] text-[18px] md:text-[20px] lg:text-[25px] font-semibold font-smooch-sans mb-1 md:mb-2">
+                        Your name</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4" />
+                            </svg>
+                        </div>
+                        <input type="text" id="input-name"
+                            class="contact-form-input bg-gray-50 border border-gray-300 text-gray-900 text-[16px] md:text-[18px] lg:text-[20px] font-smooch-sans rounded focus:ring-blue-500 focus:border-blue-500 block w-full ps-9 p-2"
+                            placeholder="Your Name" required>
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-start">
+                    <label for="input-phone"
+                        class="block uppercase text-[var(--color-text)] text-[18px] md:text-[20px] lg:text-[25px] font-semibold font-smooch-sans mb-1 md:mb-2">
+                        Your phone number</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="h-4 w-4 md:h-5 md:w-5 text-gray-500 svg-animate" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24">
+                                <path fill="currentColor" fill-opacity="0" stroke="currentColor" stroke-dasharray="64"
+                                    stroke-dashoffset="64" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M8 3c0.5 0 2.5 4.5 2.5 5c0 1 -1.5 2 -2 3c-0.5 1 0.5 2 1.5 3c0.39 0.39 2 2 3 1.5c1 -0.5 2 -2 3 -2c0.5 0 5 2 5 2.5c0 2 -1.5 3.5 -3 4c-1.5 0.5 -2.5 0.5 -4.5 0c-2 -0.5 -3.5 -1 -6 -3.5c-2.5 -2.5 -3 -4 -3.5 -6c-0.5 -2 -0.5 -3 0 -4.5c0.5 -1.5 2 -3 4 -3Z">
+                                    <animate fill="freeze" attributeName="fill-opacity" begin="0.7s" dur="0.15s"
+                                        values="0;0.3" />
+                                    <animate fill="freeze" attributeName="stroke-dashoffset" dur="0.6s" values="64;0" />
+                                </path>
+                            </svg>
+                        </div>
+                        <input type="number" id="input-phone"
+                            class="contact-form-input bg-gray-50 border border-gray-300 text-gray-900 text-[16px] md:text-[18px] lg:text-[20px] font-smooch-sans rounded focus:ring-blue-500 focus:border-blue-500 block w-full ps-9 p-2"
+                            placeholder="0812345678" required>
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-start">
+                    <label for="input-email"
+                        class="block uppercase text-[var(--color-text)] text-[18px] md:text-[20px] lg:text-[25px] font-semibold font-smooch-sans mb-1 md:mb-2">
+                        Your email</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-500 svg-animate" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24">
+                                <path fill="currentColor" fill-opacity="0" d="M12 11l-8 -5h16l-8 5Z">
+                                    <animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.15s"
+                                        values="0;0.3" />
+                                </path>
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2">
+                                    <path stroke-dasharray="64" stroke-dashoffset="64"
+                                        d="M4 5h16c0.55 0 1 0.45 1 1v12c0 0.55 -0.45 1 -1 1h-16c-0.55 0 -1 -0.45 -1 -1v-12c0 -0.55 0.45 -1 1 -1Z">
+                                        <animate fill="freeze" attributeName="stroke-dashoffset" dur="0.6s"
+                                            values="64;0" />
+                                    </path>
+                                    <path stroke-dasharray="24" stroke-dashoffset="24" d="M3 6.5l9 5.5l9 -5.5">
+                                        <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s"
+                                            values="24;0" />
+                                    </path>
+                                </g>
+                            </svg>
+                        </div>
+                        <input type="email" id="input-email"
+                            class="contact-form-input bg-gray-50 border border-gray-300 text-gray-900 text-[16px] md:text-[18px] lg:text-[20px] font-smooch-sans rounded focus:ring-blue-500 focus:border-blue-500 block w-full ps-9 p-2"
+                            placeholder="example@gmail.com" required>
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-start">
+                    <label for="input-subject"
+                        class="block uppercase text-[var(--color-text)] text-[18px] md:text-[20px] lg:text-[25px] font-semibold font-smooch-sans mb-1 md:mb-2">
+                        subject</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-500 svg-animate" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24">
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2">
+                                    <path stroke-dasharray="64" stroke-dashoffset="64" d="M13 3l6 6v12h-14v-18h8">
+                                        <animate fill="freeze" attributeName="stroke-dashoffset" dur="0.6s"
+                                            values="64;0" />
+                                    </path>
+                                    <path stroke-dasharray="14" stroke-dashoffset="14" stroke-width="1"
+                                        d="M12.5 3v5.5h6.5">
+                                        <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.7s" dur="0.2s"
+                                            values="14;0" />
+                                    </path>
+                                </g>
+                                <path fill="currentColor" fill-opacity="0" d="M5 3H12.5V8.5H19V21H5V3Z">
+                                    <animate fill="freeze" attributeName="fill-opacity" begin="1s" dur="0.15s"
+                                        values="0;0.3" />
+                                </path>
+                            </svg>
+                        </div>
+                        <input type="text" id="input-subject"
+                            class="contact-form-input bg-gray-50 border border-gray-300 text-gray-900 text-[16px] md:text-[18px] lg:text-[20px] font-smooch-sans rounded focus:ring-blue-500 focus:border-blue-500 block w-full ps-9 p-2"
+                            placeholder="Subjects" required>
+                    </div>
+                </div>
+
+                <div class="flex flex-col col-span-1 md:col-span-2 justify-start">
+                    <label for="message"
+                        class="block uppercase text-[var(--color-text)] text-[18px] md:text-[20px] lg:text-[25px] font-semibold font-smooch-sans mb-1 md:mb-2">
+                        message</label>
+                    <textarea id="message" rows="4"
+                        class="block p-2 font-smooch-sans w-full text-[16px] md:text-[18px] lg:text-[20px] text-gray-900 bg-gray-50 rounded border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="Write your thoughts here..."></textarea>
+                </div>
+
+                <button type="submit"
+                    class="col-span-1 md:col-span-2 group px-4 md:px-6 lg:px-10 py-2 md:py-2 lg:py-2 bg-[var(--color-background)] text-[#eeeeee] font-smooch-sans text-base md:text-lg lg:text-2xl hover:bg-gray-900 transition-all duration-300 flex items-center justify-center gap-2 w-fit">
+                    Send Message
+                    <span class="rotate-[-35deg] group-hover:rotate-0 transition duration-300 ease-out">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-auto" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M4 12h12.25L11 6.75l.66-.75l6.5 6.5l-6.5 6.5l-.66-.75L16.25 13H4z" />
+                        </svg>
+                    </span>
+                </button>
+
+            </form>
+
+            <!-- Image section -->
+            <div class="hidden lg:flex items-center justify-center">
+                <img src="assets/emailpost.png" alt="Contact illustration" class="w-full h-auto object-contain">
             </div>
         </div>
     </section>
@@ -531,41 +883,62 @@
 
     <script>
         (function () {
-            const slider = document.getElementById('projects-slider');
-            const prev = document.getElementById('proj-prev');
-            const next = document.getElementById('proj-next');
+            const configs = [
+                { sliderId: 'projects-slider', prevId: 'proj-prev', nextId: 'proj-next' },
+                { sliderId: 'certificate-slider', prevId: 'certif-prev', nextId: 'certif-next' }
+            ];
 
-            function scrollAmount(direction = 1) {
-                // find first visible card to determine width + gap
-                const card = slider.querySelector('article');
-                if (!card) return 0;
-                const style = getComputedStyle(card.parentElement);
-                const gap = parseInt(getComputedStyle(card.parentElement).columnGap || 32) || 32;
-                return (card.getBoundingClientRect().width + gap) * direction;
-            }
+            configs.forEach(({ sliderId, prevId, nextId }) => {
+                const slider = document.getElementById(sliderId);
+                const prev = document.getElementById(prevId);
+                const next = document.getElementById(nextId);
+                if (!slider) return;
 
-            prev.addEventListener('click', () => {
-                slider.scrollBy({ left: -scrollAmount(1), behavior: 'smooth' });
-            });
+                // find the flex container that holds cards (used to read gap)
+                const flexContainer = slider.querySelector(':scope > .flex') || slider.querySelector('.flex') || slider.firstElementChild;
 
-            next.addEventListener('click', () => {
-                slider.scrollBy({ left: scrollAmount(1), behavior: 'smooth' });
-            });
-
-            // Optional: make arrow buttons hide when not needed on wide screens
-            function updateControls() {
-                if (window.innerWidth >= 768) {
-                    // keep arrows visible on desktop because design uses them — but you can hide if preferred
-                    prev.classList.remove('hidden');
-                    next.classList.remove('hidden');
-                } else {
-                    prev.classList.remove('hidden');
-                    next.classList.remove('hidden');
+                function getCard() {
+                    return slider.querySelector('article');
                 }
-            }
 
-            window.addEventListener('resize', updateControls);
-            updateControls();
+                function getGap() {
+                    if (!flexContainer) return 32;
+                    const style = getComputedStyle(flexContainer);
+                    // try gap, fallback to columnGap, fallback 32
+                    const gap = parseFloat(style.gap) || parseFloat(style.columnGap) || 32;
+                    return isNaN(gap) ? 32 : gap;
+                }
+
+                function scrollAmount(direction = 1) {
+                    const card = getCard();
+                    if (!card) return 0;
+                    const gap = getGap();
+                    const width = card.getBoundingClientRect().width;
+                    return (width + gap) * direction;
+                }
+
+                if (prev) {
+                    prev.addEventListener('click', () => {
+                        slider.scrollBy({ left: -scrollAmount(1), behavior: 'smooth' });
+                    });
+                }
+
+                if (next) {
+                    next.addEventListener('click', () => {
+                        slider.scrollBy({ left: scrollAmount(1), behavior: 'smooth' });
+                    });
+                }
+
+                // Optional: ensure buttons stay visible on resize (no hide logic needed, but kept for parity)
+                function updateControls() {
+                    // keep buttons visible by default; adapt if you want hide/show logic
+                    if (prev) prev.classList.remove('hidden');
+                    if (next) next.classList.remove('hidden');
+                }
+
+                window.addEventListener('resize', updateControls);
+                updateControls();
+            });
         })();
     </script>
 
@@ -642,6 +1015,53 @@
                 animate();
             }, 30);
         };
+    </script>
+
+    <script>
+        const r1 = document.getElementById("r1");
+        const r2 = document.getElementById("r2");
+
+        function calc() {
+            w1 = r1.scrollWidth / 2;
+            w2 = r2.scrollWidth / 2;
+        }
+
+        function loop() {
+            const y = scrollY;
+            r1.style.transform = `translateX(${-(y * 0.6 % w1)}px)`;
+            r2.style.transform = `translateX(${(y * 0.4 % w2)}px)`;
+            requestAnimationFrame(loop);
+        }
+
+        addEventListener("load", () => {
+            calc();
+            loop();
+        });
+        addEventListener("resize", calc);
+
+    </script>
+
+    <script>
+        // Trigger SVG animations when contact section is visible
+        const contactSection = document.getElementById('contactMe');
+        const svgAnimates = document.querySelectorAll('.svg-animate');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Restart animations
+                    svgAnimates.forEach(svg => {
+                        const animates = svg.querySelectorAll('animate');
+                        animates.forEach(anim => {
+                            anim.beginElement();
+                        });
+                    });
+                    observer.unobserve(contactSection);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        observer.observe(contactSection);
     </script>
 
 </body>

@@ -368,10 +368,11 @@
             </button>
 
             <!-- Horizontal slider container -->
-            <div id="projects-slider" class="w-full hide-x overflow-x-auto snap-x snap-mandatory scroll-smooth px-2">
+            <div id="projects-slider" class="w-full hide-x overflow-x-auto snap-x snap-mandatory scroll-smooth">
                 <div class="flex gap-8 items-start w-max">
                     <!-- Card 1 -->
-                    <article class="snap-start shrink-0 min-w-[300px] max-w-[300px] md:min-w-[555px] flex flex-col">
+                    <article
+                        class="snap-start shrink-0 min-w-[300px] max-w-[300px] md:min-w-[555px] md:max-w-[555px] flex flex-col">
                         <div class="w-full h-[250px] md:h-[350px] lg:h-[450px] overflow-hidden rounded-lg">
                             <img src="assets/PAMFLET ABT.png" alt="AJIK BALI TRANSPORT"
                                 class="w-full h-full object-cover">
@@ -395,7 +396,8 @@
                     </article>
 
                     <!-- Card 2 -->
-                    <article class="snap-start shrink-0 min-w-[300px] max-w-[300px] md:min-w-[555px] flex flex-col">
+                    <article
+                        class="snap-start shrink-0 min-w-[300px] max-w-[300px] md:min-w-[555px] md:max-w-[555px] flex flex-col">
                         <div class="w-full h-[250px] md:h-[350px] lg:h-[450px] overflow-hidden rounded-lg">
                             <img src="assets/PAMFLET ABT.png" alt="AJIK BALI TRANSPORT"
                                 class="w-full h-full object-cover">
@@ -419,7 +421,8 @@
                     </article>
 
                     <!-- Card 3 -->
-                    <article class="snap-start shrink-0 min-w-[300px] max-w-[300px] md:min-w-[555px] flex flex-col">
+                    <article
+                        class="snap-start shrink-0 min-w-[300px] max-w-[300px] md:min-w-[555px] md:max-w-[555px] flex flex-col">
                         <div class="w-full h-[250px] md:h-[350px] lg:h-[450px] overflow-hidden rounded-lg">
                             <img src="assets/PAMFLET ABT.png" alt="AJIK BALI TRANSPORT"
                                 class="w-full h-full object-cover">
@@ -577,7 +580,7 @@
             </button>
 
             <!-- Horizontal slider container -->
-            <div id="certificate-slider" class="w-full hide-x overflow-x-auto snap-x snap-mandatory scroll-smooth px-2">
+            <div id="certificate-slider" class="w-full hide-x overflow-x-auto snap-x snap-mandatory scroll-smooth">
                 <div class="flex gap-8 items-start w-max">
                     <!-- Card 1 -->
                     <article class="snap-start shrink-0 min-w-[300px] max-w-[300px] md:min-w-[555px] flex flex-col">
@@ -904,18 +907,15 @@
                 const next = document.getElementById(nextId);
                 if (!slider) return;
 
-                // find the flex container that holds cards (used to read gap)
-                const flexContainer = slider.querySelector(':scope > .flex') || slider.querySelector('.flex') || slider.firstElementChild;
-
                 function getCard() {
                     return slider.querySelector('article');
                 }
 
                 function getGap() {
-                    if (!flexContainer) return 32;
-                    const style = getComputedStyle(flexContainer);
-                    // try gap, fallback to columnGap, fallback 32
-                    const gap = parseFloat(style.gap) || parseFloat(style.columnGap) || 32;
+                    const flexDiv = slider.querySelector('.flex');
+                    if (!flexDiv) return 32;
+                    const style = getComputedStyle(flexDiv);
+                    const gap = parseFloat(style.gap) || 32;
                     return isNaN(gap) ? 32 : gap;
                 }
 
@@ -927,69 +927,152 @@
                     return (width + gap) * direction;
                 }
 
+                function smoothScrollBy(amount) {
+                    slider.scrollBy({ left: amount, behavior: 'smooth' });
+                }
+
                 if (prev) {
-                    prev.addEventListener('click', () => {
-                        slider.scrollBy({ left: -scrollAmount(1), behavior: 'smooth' });
-                    });
+                    prev.addEventListener('click', () => smoothScrollBy(-scrollAmount(1)));
                 }
 
                 if (next) {
-                    next.addEventListener('click', () => {
-                        slider.scrollBy({ left: scrollAmount(1), behavior: 'smooth' });
+                    next.addEventListener('click', () => smoothScrollBy(scrollAmount(1)));
+                }
+
+                function updateControlsVisibility() {
+                    if (!prev || !next) return;
+
+                    const eps = 6;
+                    const maxScroll = Math.max(0, slider.scrollWidth - slider.clientWidth);
+                    const sc = slider.scrollLeft;
+
+                    // Hide prev button when at start
+                    if (sc <= eps) {
+                        prev.classList.add('hidden');
+                        prev.setAttribute('aria-hidden', 'true');
+                        prev.setAttribute('disabled', 'true');
+                    } else {
+                        prev.classList.remove('hidden');
+                        prev.removeAttribute('aria-hidden');
+                        prev.removeAttribute('disabled');
+                    }
+
+                    // Hide next button when at end
+                    if (sc >= maxScroll - eps) {
+                        next.classList.add('hidden');
+                        next.setAttribute('aria-hidden', 'true');
+                        next.setAttribute('disabled', 'true');
+                    } else {
+                        next.classList.remove('hidden');
+                        next.removeAttribute('aria-hidden');
+                        next.removeAttribute('disabled');
+                    }
+                }
+
+                let updateTimeout;
+                slider.addEventListener('scroll', () => {
+                    clearTimeout(updateTimeout);
+                    updateControlsVisibility();
+                    updateTimeout = setTimeout(updateControlsVisibility, 120);
+                });
+
+                const imgs = slider.querySelectorAll('img');
+                if (imgs.length) {
+                    let pending = imgs.length;
+                    imgs.forEach(img => {
+                        if (img.complete) {
+                            pending--;
+                        } else {
+                            img.addEventListener('load', () => {
+                                pending--;
+                                if (pending <= 0) {
+                                    setTimeout(updateControlsVisibility, 50);
+                                }
+                            }, { once: true });
+                            img.addEventListener('error', () => {
+                                pending--;
+                                if (pending <= 0) {
+                                    setTimeout(updateControlsVisibility, 50);
+                                }
+                            }, { once: true });
+                        }
                     });
+                    if (pending <= 0) setTimeout(updateControlsVisibility, 50);
+                } else {
+                    setTimeout(updateControlsVisibility, 50);
                 }
 
-                // Optional: ensure buttons stay visible on resize (no hide logic needed, but kept for parity)
-                function updateControls() {
-                    // keep buttons visible by default; adapt if you want hide/show logic
-                    if (prev) prev.classList.remove('hidden');
-                    if (next) next.classList.remove('hidden');
-                }
+                window.addEventListener('resize', () => {
+                    clearTimeout(updateTimeout);
+                    updateTimeout = setTimeout(updateControlsVisibility, 120);
+                });
 
-                window.addEventListener('resize', updateControls);
-                updateControls();
+                // Initial call - ensure it runs
+                updateControlsVisibility();
             });
         })();
     </script>
 
-    <script>
+
+            <script>
         const btn = document.getElementById('menu-toggle');
         const menu = document.getElementById('menu');
         const navbar = document.querySelector('nav');
+        const navLinks = document.querySelectorAll('#menu a[href^="#"]');
+        const sections = document.querySelectorAll('section[id]');
 
-        // --- Animasi Slide Menu Mobile ---
+        // --- Mobile Menu Toggle ---
         btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('animate-slideDown');
             if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-                menu.classList.remove('animate-slideUp');
-                menu.classList.add('animate-slideDown');
-            } else {
-                menu.classList.remove('animate-slideDown');
                 menu.classList.add('animate-slideUp');
-                setTimeout(() => {
-                    menu.classList.add('hidden');
-                    menu.classList.remove('animate-slideUp');
-                }, 350); // waktu sesuai animasi CSS
+                setTimeout(() => menu.classList.remove('animate-slideUp'), 350);
             }
         });
 
-        // --- Animasi Hide Navbar Saat Scroll ---
+        // --- Close menu when nav link is clicked ---
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                menu.classList.remove('animate-slideDown');
+                btn.checked = false;
+                
+                // Refresh navbar styles
+                navbar.style.transform = 'translateY(0)';
+                navbar.style.transition = 'transform 0.3s ease';
+            });
+        });
+
+        // --- Navbar Hide/Show on Scroll ---
         let lastScrollTop = 0;
         window.addEventListener('scroll', () => {
             const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-            if (currentScroll > lastScrollTop) {
-                // Scroll ke bawah → sembunyikan navbar
-                navbar.style.transform = 'translateY(-100%)';
-                navbar.style.transition = 'transform 0.3s ease';
-            } else {
-                // Scroll ke atas → tampilkan navbar
-                navbar.style.transform = 'translateY(0)';
-                navbar.style.transition = 'transform 0.3s ease';
-            }
-
-            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // untuk mencegah nilai negatif
+            navbar.style.transform = currentScroll > lastScrollTop ? 'translateY(-100%)' : 'translateY(0)';
+            navbar.style.transition = 'transform 0.3s ease';
+            lastScrollTop = Math.max(0, currentScroll);
         });
+
+        // --- Active Section Indicator ---
+        function updateActiveLink() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('underline', 'text-[var(--color-background)]');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('underline', 'text-[var(--color-background)]');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveLink);
+        updateActiveLink();
     </script>
 
     <script>

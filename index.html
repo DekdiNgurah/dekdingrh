@@ -58,7 +58,7 @@
 
 
                 <div id="menu"
-                    class="hidden lg:flex flex-col lg:flex-row lg:items-center lg:gap-20 absolute lg:static top-20 w-full lg:w-full bg-[var(--color-white)] lg:bg-transparent px-4 md:px-12 lg:px-0 pb-5 lg:p-0 shadow lg:shadow-none z-50">
+                    class="hidden lg:flex flex-col lg:flex-row lg:items-center lg:gap-20 absolute lg:static top-14 w-full lg:w-full bg-[var(--color-white)] lg:bg-transparent px-4 md:px-12 lg:px-0 py-5 lg:p-0 shadow lg:shadow-none z-50">
 
                     <div class="w-full">
                         <ul class="flex lg:flex-row flex-col lg:justify-between lg:items-center space-y-4 lg:space-y-0">
@@ -69,13 +69,13 @@
                                     class="text-[23px] uppercase font-smooch-sans font-semibold text-[var(--color-text)] hover:underline">about
                                     me</a>
                             </li>
-                            <li class=""><a href="javascript:void(0)"
+                            <li class=""><a href="#services"
                                     class="text-[23px] uppercase font-smooch-sans font-semibold text-[var(--color-text)] hover:underline">Services</a>
                             </li>
-                            <li class=""><a href="javascript:void(0)"
+                            <li class=""><a href="#projects"
                                     class="text-[23px] uppercase font-smooch-sans font-semibold text-[var(--color-text)] hover:underline">projects</a>
                             </li>
-                            <li class=""><a href="javascript:void(0)"
+                            <li class=""><a href="#certificates"
                                     class="text-[23px] uppercase font-smooch-sans font-semibold text-[var(--color-text)] hover:underline">certificates</a>
                             </li>
                             <li><a href="#contacts"
@@ -292,10 +292,10 @@
         </div>
     </section>
 
-    <section id="about"
+    <section
         class="pt-5 md:pt-5 lg:pt-16 px-5 md:px-12 lg:px-28 flex flex-col lg:flex-row justify-between w-full lg:gap-44">
         <div class="relative w-fit h-fit">
-            <h1 class="text-[50px] md:text-[60px] lg:text-[110px] gradient-text uppercase w-fit">about</h1>
+            <h1 class="text-[50px] md:text-[60px] lg:text-[110px] gradient-text uppercase w-fit" id="about">about</h1>
             <div class="absolute right-0 bottom-2 md:bottom-0">
                 <div class="flex justify-end w-full">
                     <span
@@ -338,7 +338,7 @@
         </div>
     </section>
 
-    <section class="relative mt-20 lg:mt-28 px-5 md:px-12 lg:px-28 w-full">
+    <section class="relative pt-6 mt-14 lg:mt-28 px-5 md:px-12 lg:px-28 w-full" id="projects">
         <div class="w-full flex flex-col items-center">
             <h1
                 class="text-[50px] leading-[50px] md:leading-none md:text-[60px] lg:text-[100px] gradient-text font-medium w-fit text-center">
@@ -462,7 +462,7 @@
         </div>
     </section>
 
-    <section class="relative mt-20 lg:mt-28 px-5 md:px-12 lg:px-28 w-full">
+    <section class="relative mt-20 lg:mt-28 px-5 md:px-12 lg:px-28 w-full" id="services">
         <div class="w-full flex flex-col items-center">
             <h1
                 class="text-[50px] leading-[50px] md:leading-none md:text-[60px] lg:text-[100px] gradient-text font-medium w-fit text-center">
@@ -552,7 +552,7 @@
         </div>
     </section>
 
-    <section class="relative mt-20 lg:mt-28 px-5 md:px-12 lg:px-28 w-full">
+    <section class="relative mt-20 lg:mt-28 px-5 md:px-12 lg:px-28 w-full" id="certificates">
         <div class="w-full flex flex-col items-center">
             <h1
                 class="text-[50px] leading-[50px] md:leading-none md:text-[60px] lg:text-[100px] gradient-text font-medium w-fit text-center">
@@ -640,104 +640,106 @@
         </div>
     </section>
 
-    <section id="contacts"
-        class="py-8 md:py-20 lg:py-24 mt-12 lg:mt-28 px-4 md:px-8 lg:px-14 bg-[var(--color-background)] w-full">
+    <section id="contacts" class="pt-10">
 
-        <div class="mask overflow-hidden">
-            <div id="r1"
-                class="move-track flex gap-8 md:gap-16 lg:gap-28 font-smooch-sans uppercase text-[var(--color-white)] text-[16px] md:text-[20px] lg:text-[25px] font-semibold">
-                <h2>instagram</h2>
-                <h2>whatsapp</h2>
-                <h2>linkedin</h2>
-                <h2>github</h2>
-
-                <h2>instagram</h2>
-                <h2>whatsapp</h2>
-                <h2>linkedin</h2>
-                <h2>github</h2>
-
-                <h2>instagram</h2>
-                <h2>whatsapp</h2>
-                <h2>linkedin</h2>
-                <h2>github</h2>
-
-                <h2>instagram</h2>
-                <h2>whatsapp</h2>
-                <h2>linkedin</h2>
-                <h2>github</h2>
+        <div class="py-8 md:py-20 lg:py-24 pt-14 lg:pt-28 px-4 md:px-8 lg:px-14 bg-[var(--color-background)] w-full">
+            <div class="mask overflow-hidden">
+                <div id="r1"
+                    class="move-track flex gap-8 md:gap-16 lg:gap-28 font-smooch-sans uppercase text-[var(--color-white)] text-[16px] md:text-[20px] lg:text-[25px] font-semibold">
+                    <h2>instagram</h2>
+                    <h2>whatsapp</h2>
+                    <h2>linkedin</h2>
+                    <h2>github</h2>
+    
+                    <h2>instagram</h2>
+                    <h2>whatsapp</h2>
+                    <h2>linkedin</h2>
+                    <h2>github</h2>
+    
+                    <h2>instagram</h2>
+                    <h2>whatsapp</h2>
+                    <h2>linkedin</h2>
+                    <h2>github</h2>
+    
+                    <h2>instagram</h2>
+                    <h2>whatsapp</h2>
+                    <h2>linkedin</h2>
+                    <h2>github</h2>
+                </div>
+            </div>
+    
+            <div class="mask overflow-hidden mt-3 md:mt-4 lg:mt-5 flex justify-end">
+                <div id="r2"
+                    class="move-track flex gap-8 md:gap-16 lg:gap-28 font-smooch-sans uppercase text-[var(--color-white)] text-[16px] md:text-[20px] lg:text-[25px] font-semibold">
+                    <h2>instagram</h2>
+                    <h2>whatsapp</h2>
+                    <h2>linkedin</h2>
+                    <h2>github</h2>
+    
+                    <h2>instagram</h2>
+                    <h2>whatsapp</h2>
+                    <h2>linkedin</h2>
+                    <h2>github</h2>
+    
+                    <h2>instagram</h2>
+                    <h2>whatsapp</h2>
+                    <h2>linkedin</h2>
+                    <h2>github</h2>
+    
+                    <h2>instagram</h2>
+                    <h2>whatsapp</h2>
+                    <h2>linkedin</h2>
+                    <h2>github</h2>
+                </div>
+            </div>
+    
+            <div class="flex justify-center mt-6 md:mt-8 lg:mt-10">
+                <h1
+                    class="uppercase tracking-wide text-center gradient-text2 w-fit text-[60px] md:text-[120px] lg:text-[190px] leading-tight">
+                    let's talk in</h1>
+            </div>
+    
+            <div class="px-4 md:px-6 lg:px-10 mt-6 md:mt-8">
+                <div class="flex flex-col md:flex-row gap-3 md:gap-4 lg:gap-0 md:justify-between flex-wrap">
+                    <a href="javascript:void(0)"
+                        class="uppercase font-smooch-sans font-medium text-[20px] md:text-[28px] lg:text-[40px] bg-[var(--color-white)] px-6 md:px-10 lg:px-14 py-1 md:py-2 lg:py-2 border hover:bg-gray-300 transition duration-300 rounded-full text-center">
+                        instagram
+                    </a>
+    
+                    <a href="javascript:void(0)"
+                        class="uppercase font-smooch-sans font-medium text-[20px] md:text-[28px] lg:text-[40px] bg-[var(--color-white)] px-6 md:px-10 lg:px-14 py-1 md:py-2 lg:py-2 border hover:bg-gray-300 transition duration-300 rounded-full text-center">
+                        whatsapp
+                    </a>
+    
+                    <a href="javascript:void(0)"
+                        class="uppercase font-smooch-sans font-medium text-[20px] md:text-[28px] lg:text-[40px] bg-[var(--color-white)] px-6 md:px-10 lg:px-14 py-1 md:py-2 lg:py-2 border hover:bg-gray-300 transition duration-300 rounded-full text-center">
+                        linkedin
+                    </a>
+    
+                    <a href="javascript:void(0)"
+                        class="uppercase font-smooch-sans font-medium text-[20px] md:text-[28px] lg:text-[40px] bg-[var(--color-white)] px-6 md:px-10 lg:px-14 py-1 md:py-2 lg:py-2 border hover:bg-gray-300 transition duration-300 rounded-full text-center">
+                        github
+                    </a>
+    
+                    <a href="#contactMe"
+                        class="uppercase font-smooch-sans font-medium text-[20px] md:text-[28px] lg:text-[40px] border border-[var(--color-white)] px-6 md:px-10 lg:px-14 py-1 md:py-2 lg:py-2 hover:bg-[var(--color-white)] hover:text-[var(--color-text)] text-[var(--color-white)] transition duration-300 rounded-full text-center">
+                        contact us
+                    </a>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between gap-4 md:gap-0 mt-6 md:mt-8">
+                    <p
+                        class="font-smooch-sans uppercase text-[16px] md:text-[18px] lg:text-[25px] text-[var(--color-white)]">
+                        &copy;
+                        <strong>dekdingrh.</strong> 2025 all right reserved.
+                    </p>
+    
+                    <p
+                        class="font-smooch-sans uppercase text-[16px] md:text-[18px] lg:text-[25px] text-[var(--color-white)]">
+                        by dekdi ngurah.</p>
+                </div>
             </div>
         </div>
 
-        <div class="mask overflow-hidden mt-3 md:mt-4 lg:mt-5 flex justify-end">
-            <div id="r2"
-                class="move-track flex gap-8 md:gap-16 lg:gap-28 font-smooch-sans uppercase text-[var(--color-white)] text-[16px] md:text-[20px] lg:text-[25px] font-semibold">
-                <h2>instagram</h2>
-                <h2>whatsapp</h2>
-                <h2>linkedin</h2>
-                <h2>github</h2>
-
-                <h2>instagram</h2>
-                <h2>whatsapp</h2>
-                <h2>linkedin</h2>
-                <h2>github</h2>
-
-                <h2>instagram</h2>
-                <h2>whatsapp</h2>
-                <h2>linkedin</h2>
-                <h2>github</h2>
-
-                <h2>instagram</h2>
-                <h2>whatsapp</h2>
-                <h2>linkedin</h2>
-                <h2>github</h2>
-            </div>
-        </div>
-
-        <div class="flex justify-center mt-6 md:mt-8 lg:mt-10">
-            <h1
-                class="uppercase tracking-wide text-center gradient-text2 w-fit text-[60px] md:text-[120px] lg:text-[190px] leading-tight">
-                let's talk in</h1>
-        </div>
-
-        <div class="px-4 md:px-6 lg:px-10 mt-6 md:mt-8">
-            <div class="flex flex-col md:flex-row gap-3 md:gap-4 lg:gap-0 md:justify-between flex-wrap">
-                <a href="javascript:void(0)"
-                    class="uppercase font-smooch-sans font-medium text-[20px] md:text-[28px] lg:text-[40px] bg-[var(--color-white)] px-6 md:px-10 lg:px-14 py-1 md:py-2 lg:py-2 border hover:bg-gray-300 transition duration-300 rounded-full text-center">
-                    instagram
-                </a>
-
-                <a href="javascript:void(0)"
-                    class="uppercase font-smooch-sans font-medium text-[20px] md:text-[28px] lg:text-[40px] bg-[var(--color-white)] px-6 md:px-10 lg:px-14 py-1 md:py-2 lg:py-2 border hover:bg-gray-300 transition duration-300 rounded-full text-center">
-                    whatsapp
-                </a>
-
-                <a href="javascript:void(0)"
-                    class="uppercase font-smooch-sans font-medium text-[20px] md:text-[28px] lg:text-[40px] bg-[var(--color-white)] px-6 md:px-10 lg:px-14 py-1 md:py-2 lg:py-2 border hover:bg-gray-300 transition duration-300 rounded-full text-center">
-                    linkedin
-                </a>
-
-                <a href="javascript:void(0)"
-                    class="uppercase font-smooch-sans font-medium text-[20px] md:text-[28px] lg:text-[40px] bg-[var(--color-white)] px-6 md:px-10 lg:px-14 py-1 md:py-2 lg:py-2 border hover:bg-gray-300 transition duration-300 rounded-full text-center">
-                    github
-                </a>
-
-                <a href="#contactMe"
-                    class="uppercase font-smooch-sans font-medium text-[20px] md:text-[28px] lg:text-[40px] border border-[var(--color-white)] px-6 md:px-10 lg:px-14 py-1 md:py-2 lg:py-2 hover:bg-[var(--color-white)] hover:text-[var(--color-text)] text-[var(--color-white)] transition duration-300 rounded-full text-center">
-                    contact us
-                </a>
-            </div>
-            <div class="flex flex-col md:flex-row justify-between gap-4 md:gap-0 mt-6 md:mt-8">
-                <p
-                    class="font-smooch-sans uppercase text-[16px] md:text-[18px] lg:text-[25px] text-[var(--color-white)]">
-                    &copy;
-                    <strong>dekdingrh.</strong> 2025 all right reserved.
-                </p>
-
-                <p
-                    class="font-smooch-sans uppercase text-[16px] md:text-[18px] lg:text-[25px] text-[var(--color-white)]">
-                    by dekdi ngurah.</p>
-            </div>
-        </div>
     </section>
 
     <section id="contactMe" class="mt-12 md:mt-20 lg:mt-28 px-4 md:px-8 lg:px-28 pb-12 md:pb-16 lg:pb-20">
@@ -1014,7 +1016,7 @@
     </script>
 
 
-            <script>
+    <script>
         const btn = document.getElementById('menu-toggle');
         const menu = document.getElementById('menu');
         const navbar = document.querySelector('nav');
@@ -1037,7 +1039,7 @@
                 menu.classList.add('hidden');
                 menu.classList.remove('animate-slideDown');
                 btn.checked = false;
-                
+
                 // Refresh navbar styles
                 navbar.style.transform = 'translateY(0)';
                 navbar.style.transition = 'transform 0.3s ease';

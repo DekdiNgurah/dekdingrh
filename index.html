@@ -937,43 +937,28 @@
     </script>
 
     <script>
-        /* ==================================================
-           REAL-TIME LOADING PROGRESS USING XHR
-           ================================================== */
+        /* ================= DYNAMIC LOADER =================
+        
+        Loader muncul otomatis saat browser loading.
+        Loader hilang otomatis ketika halaman selesai dimuat,
+        mengikuti waktu loading asli dari browser.
+        
+        =============================================== */
 
-        // ambil URL halaman saat ini
-        const url = window.location.href;
+        document.onreadystatechange = function () {
+            const loader = document.getElementById("loader");
 
-        const xhr = new XMLHttpRequest();
-        xhr.open("GET", url, true);
-        xhr.responseType = "document";
+            // Ketika status = "complete" → loading selesai
+            if (document.readyState === "complete") {
+                // Tambahkan sedikit delay biar smooth
+                setTimeout(() => {
+                    loader.style.opacity = "0";
+                    loader.style.pointerEvents = "none";
 
-        // elemen UI
-        const loader = document.getElementById("loader");
-        const progressFill = document.getElementById("progressFill");
-        const progressText = document.getElementById("progressPercent");
-
-        // event progress → REAL TIME
-        xhr.onprogress = function (event) {
-            if (event.lengthComputable) {
-                let percent = Math.round((event.loaded / event.total) * 100);
-
-                // update UI
-                progressFill.style.width = percent + "%";
-                progressText.innerText = percent + "%";
+                    setTimeout(() => loader.style.display = "none", 400);
+                }, 300); // delay opsional
             }
         };
-
-        // setelah loading selesai
-        xhr.onload = function () {
-            setTimeout(() => {
-                loader.style.opacity = "0";
-                setTimeout(() => loader.remove(), 400);
-            }, 300);
-        };
-
-        // kirim request
-        xhr.send();
     </script>
 
 

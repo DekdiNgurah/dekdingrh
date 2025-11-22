@@ -893,68 +893,94 @@
         </div>
     </section>
 
-    <!-- ================= LOADER ================= -->
-    <div id="loaderWrapper"
-        class="fixed inset-0 bg-black/90 backdrop-blur-sm flex flex-col items-center justify-center gap-5 z-[9999] transition-opacity duration-500">
+    <!-- LOADING OVERLAY -->
+    <div id="loader" class="fixed inset-0 bg-gray-900 z-[9999] flex flex-col items-center justify-center gap-6 
+                px-6 transition-opacity duration-500">
 
-        <!-- Title -->
-        <h1 class="text-xl font-semibold animate-pulse">
-            Loading Resources...
+        <h1 class="text-white text-xl md:text-2xl font-semibold tracking-wide">
+            Loading Assets…
         </h1>
 
-        <!-- Progress Box -->
-        <div class="w-72 h-6 bg-neutral-900 rounded-full p-[3px] shadow-inner shadow-black/70">
-            <div id="progressFill"
-                class="h-full w-0 rounded-full bg-gradient-to-r from-orange-600 to-yellow-300 transition-all duration-100">
-            </div>
+        <!-- PROGRESS BAR WRAPPER -->
+        <div class="w-full max-w-md bg-gray-800 rounded-full h-4 overflow-hidden">
+            <div id="loader-bar" class="h-full bg-blue-500 rounded-full transition-all duration-100"
+                 style="width: 0%;"></div>
         </div>
 
-        <!-- Percent -->
-        <p id="percentText" class="text-base font-medium">0%</p>
+        <!-- PERCENT TEXT -->
+        <div id="loader-text" class="text-white text-2xl font-bold">
+            0%
+        </div>
+
     </div>
 
-    <script>
-        /* =============================================================
-           REAL-TIME PROGRESS LOADER — XHR Auto Progress
-           ============================================================= */
 
-        const url = window.location.href;
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
-        // Element references
-        const loader = document.getElementById("loaderWrapper");
-        const fill = document.getElementById("progressFill");
-        const percentText = document.getElementById("percentText");
+    const loader = document.getElementById("loader");
+    const loaderText = document.getElementById("loader-text");
+    const loaderBar = document.getElementById("loader-bar");
+    const content = document.getElementById("content");
 
-        const xhr = new XMLHttpRequest();
-        xhr.open("GET", url, true);
-        xhr.responseType = "document";
+    let totalBytes = 0;
+    let loadedBytes = 0;
 
-        // Real-time progress
-        xhr.onprogress = function (e) {
-            if (e.lengthComputable) {
-                let percent = Math.round((e.loaded / e.total) * 100);
+    // Get all resource entries
+    const resources = performance.getEntriesByType("resource");
 
-                fill.style.width = percent + "%";
-                percentText.textContent = percent + "%";
-            }
-        };
+    resources.forEach(res => {
+        totalBytes += res.transferSize || 0;
+    });
 
-        // Fade out after fully loaded
-        xhr.onload = function () {
+    // Fallback apabila browser tidak memberi transferSize
+    if (totalBytes === 0) {
+        totalBytes = 3000000; // 3MB estimasi
+    }
+
+    function updateLoader() {
+        const updated = performance.getEntriesByType("resource");
+
+        loadedBytes = 0;
+        updated.forEach(res => {
+            loadedBytes += res.transferSize || 0;
+        });
+
+        let percent = Math.round((loadedBytes / totalBytes) * 100);
+        if (percent > 100) percent = 100;
+
+        loaderText.textContent = percent + "%";
+        loaderBar.style.width = percent + "%";
+
+        // When fully loaded
+        if (percent === 100) {
             setTimeout(() => {
                 loader.classList.add("opacity-0");
-                setTimeout(() => loader.remove(), 500);
-            }, 250);
-        };
 
-        xhr.send();
-    </script>
+                setTimeout(() => {
+                    loader.remove();
+                }, 600);
+
+                content.classList.remove("opacity-0");
+            }, 300);
+        }
+    }
+
+    // Realtime update
+    const interval = setInterval(updateLoader, 80);
+
+    // Ensure onload triggers final update
+    window.onload = () => {
+        updateLoader();
+        setTimeout(() => clearInterval(interval), 1000);
+    };
+
+});
+</script>
 
 
     <!-- JS AREAS -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
-    <!-- Smooth Scroll Library -->
-    <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16/dist/smooth-scroll.polyfills.min.js"></script>
 
     <script>
         const scroll = new SmoothScroll('a[href*="#"]', {

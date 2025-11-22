@@ -11,6 +11,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
 
+    <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16/dist/smooth-scroll.polyfills.min.js"></script>
+
 
     <script>
         tailwind.config = {
@@ -893,94 +895,38 @@
         </div>
     </section>
 
-    <!-- LOADING OVERLAY -->
-    <div id="loader" class="fixed inset-0 bg-gray-900 z-[9999] flex flex-col items-center justify-center gap-6 
-                px-6 transition-opacity duration-500">
-
-        <h1 class="text-white text-xl md:text-2xl font-semibold tracking-wide">
-            Loading Assets…
-        </h1>
-
-        <!-- PROGRESS BAR WRAPPER -->
-        <div class="w-full max-w-md bg-gray-800 rounded-full h-4 overflow-hidden">
-            <div id="loader-bar" class="h-full bg-blue-500 rounded-full transition-all duration-100"
-                 style="width: 0%;"></div>
+    <!-- loading -->
+    <!-- ================= LOADER HTML ================= -->
+    <div class="loader-wrapper" id="loader">
+        <div class="loader">
+            <div class="loading-text">
+                Loading
+                <span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
+            </div>
+            <div class="loading-bar-background">
+                <div class="loading-bar">
+                    <div class="white-bars-container">
+                        <div class="white-bar"></div>
+                        <div class="white-bar"></div>
+                        <div class="white-bar"></div>
+                        <div class="white-bar"></div>
+                        <div class="white-bar"></div>
+                        <div class="white-bar"></div>
+                        <div class="white-bar"></div>
+                        <div class="white-bar"></div>
+                        <div class="white-bar"></div>
+                        <div class="white-bar"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <!-- PERCENT TEXT -->
-        <div id="loader-text" class="text-white text-2xl font-bold">
-            0%
-        </div>
-
     </div>
-
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-    const loader = document.getElementById("loader");
-    const loaderText = document.getElementById("loader-text");
-    const loaderBar = document.getElementById("loader-bar");
-    const content = document.getElementById("content");
-
-    let totalBytes = 0;
-    let loadedBytes = 0;
-
-    // Get all resource entries
-    const resources = performance.getEntriesByType("resource");
-
-    resources.forEach(res => {
-        totalBytes += res.transferSize || 0;
-    });
-
-    // Fallback apabila browser tidak memberi transferSize
-    if (totalBytes === 0) {
-        totalBytes = 3000000; // 3MB estimasi
-    }
-
-    function updateLoader() {
-        const updated = performance.getEntriesByType("resource");
-
-        loadedBytes = 0;
-        updated.forEach(res => {
-            loadedBytes += res.transferSize || 0;
-        });
-
-        let percent = Math.round((loadedBytes / totalBytes) * 100);
-        if (percent > 100) percent = 100;
-
-        loaderText.textContent = percent + "%";
-        loaderBar.style.width = percent + "%";
-
-        // When fully loaded
-        if (percent === 100) {
-            setTimeout(() => {
-                loader.classList.add("opacity-0");
-
-                setTimeout(() => {
-                    loader.remove();
-                }, 600);
-
-                content.classList.remove("opacity-0");
-            }, 300);
-        }
-    }
-
-    // Realtime update
-    const interval = setInterval(updateLoader, 80);
-
-    // Ensure onload triggers final update
-    window.onload = () => {
-        updateLoader();
-        setTimeout(() => clearInterval(interval), 1000);
-    };
-
-});
-</script>
 
 
     <!-- JS AREAS -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <!-- Smooth Scroll Library -->
+    <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16/dist/smooth-scroll.polyfills.min.js"></script>
 
     <script>
         const scroll = new SmoothScroll('a[href*="#"]', {
@@ -990,7 +936,30 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     </script>
 
+    <script>
+/* ================= DYNAMIC LOADER =================
 
+Loader muncul otomatis saat browser loading.
+Loader hilang otomatis ketika halaman selesai dimuat,
+mengikuti waktu loading asli dari browser.
+
+=============================================== */
+
+document.onreadystatechange = function () {
+  const loader = document.getElementById("loader");
+
+  // Ketika status = "complete" → loading selesai
+  if (document.readyState === "complete") {
+    // Tambahkan sedikit delay biar smooth
+    setTimeout(() => {
+      loader.style.opacity = "0";
+      loader.style.pointerEvents = "none";
+
+      setTimeout(() => loader.style.display = "none", 400);
+    }, 300); // delay opsional
+  }
+};
+</script>
 
 
     <script>

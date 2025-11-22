@@ -11,8 +11,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
 
-    <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16/dist/smooth-scroll.polyfills.min.js"></script>
-
 
     <script>
         tailwind.config = {
@@ -895,135 +893,61 @@
         </div>
     </section>
 
-    <!-- ================= LOADER HTML ================= -->
-    <div class="loader-wrapper" id="loader">
-        <div class="loader">
-            <div class="loading-text">
-                Loading
-                <span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
-            </div>
-            <div class="loading-bar-background">
-                <div class="loading-bar">
-                    <div class="white-bars-container" id="progressFill">
-                        <div class="white-bar"></div>
-                        <div class="white-bar"></div>
-                        <div class="white-bar"></div>
-                        <div class="white-bar"></div>
-                        <div class="white-bar"></div>
-                        <div class="white-bar"></div>
-                        <div class="white-bar"></div>
-                        <div class="white-bar"></div>
-                        <div class="white-bar"></div>
-                        <div class="white-bar"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-2">
-                <span id="progressPercent" class="text-sm font-smooch-sans">0%</span>
+    <!-- ================= LOADER ================= -->
+    <div id="loaderWrapper"
+        class="fixed inset-0 bg-black/90 backdrop-blur-sm flex flex-col items-center justify-center gap-5 z-[9999] transition-opacity duration-500">
+
+        <!-- Title -->
+        <h1 class="text-xl font-semibold animate-pulse">
+            Loading Resources...
+        </h1>
+
+        <!-- Progress Box -->
+        <div class="w-72 h-6 bg-neutral-900 rounded-full p-[3px] shadow-inner shadow-black/70">
+            <div id="progressFill"
+                class="h-full w-0 rounded-full bg-gradient-to-r from-orange-600 to-yellow-300 transition-all duration-100">
             </div>
         </div>
+
+        <!-- Percent -->
+        <p id="percentText" class="text-base font-medium">0%</p>
     </div>
 
     <script>
-        /* ================= REAL-TIME LOADER WITH PROGRESS =================
-        
-        Loader tracks real browser loading progress and displays it in real-time.
-        Uses Resource Timing API + document ready state for accurate progress.
-        
-        =============================================== */
+        /* =============================================================
+           REAL-TIME PROGRESS LOADER — XHR Auto Progress
+           ============================================================= */
 
-        (function initRealtimeLoader() {
-            const loader = document.getElementById('loader');
-            const progressFill = document.getElementById('progressFill');
-            const progressPercent = document.getElementById('progressPercent');
-            
-            if (!loader || !progressFill || !progressPercent) return;
+        const url = window.location.href;
 
-            let currentProgress = 0;
-            const maxProgress = 95; // Don't go to 100% until truly done
+        // Element references
+        const loader = document.getElementById("loaderWrapper");
+        const fill = document.getElementById("progressFill");
+        const percentText = document.getElementById("percentText");
 
-            function updateProgress(percent) {
-                currentProgress = Math.min(Math.max(percent, currentProgress), maxProgress);
-                if (progressFill) progressFill.style.width = currentProgress + '%';
-                if (progressPercent) progressPercent.innerText = Math.round(currentProgress) + '%';
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", url, true);
+        xhr.responseType = "document";
+
+        // Real-time progress
+        xhr.onprogress = function (e) {
+            if (e.lengthComputable) {
+                let percent = Math.round((e.loaded / e.total) * 100);
+
+                fill.style.width = percent + "%";
+                percentText.textContent = percent + "%";
             }
+        };
 
-            function simulateProgress() {
-                // Simulate natural progress curve
-                if (currentProgress < 10) {
-                    updateProgress(currentProgress + Math.random() * 8);
-                } else if (currentProgress < 50) {
-                    updateProgress(currentProgress + Math.random() * 5);
-                } else {
-                    updateProgress(currentProgress + Math.random() * 2);
-                }
-            }
-
-            // Start with 5%
-            updateProgress(5);
-
-            // Simulate progress every 200-800ms
-            const simulationInterval = setInterval(simulateProgress, Math.random() * 600 + 200);
-
-            // Track actual resource loading
-            if (window.performance && window.performance.getEntriesByType) {
-                const checkResources = setInterval(() => {
-                    try {
-                        const resources = window.performance.getEntriesByType('resource');
-                        if (resources.length > 0) {
-                            // Calculate based on loaded resources
-                            const loadedCount = resources.filter(r => r.responseEnd > 0).length;
-                            const totalEstimate = Math.max(resources.length, 5);
-                            const resourceProgress = (loadedCount / totalEstimate) * 70 + 15;
-                            
-                            if (resourceProgress > currentProgress) {
-                                updateProgress(resourceProgress);
-                            }
-                        }
-                    } catch (e) {}
-                }, 100);
-
-                window.addEventListener('load', () => clearInterval(checkResources));
-            }
-
-            // Monitor document ready state
-            const readyStateInterval = setInterval(() => {
-                if (document.readyState === 'interactive') {
-                    updateProgress(75);
-                } else if (document.readyState === 'complete') {
-                    clearInterval(readyStateInterval);
-                    clearInterval(simulationInterval);
-                    updateProgress(100);
-                }
-            }, 50);
-
-            // Final cleanup when page is fully loaded
-            window.addEventListener('load', () => {
-                clearInterval(simulationInterval);
-                updateProgress(100);
-                
-                // Fade out after completion
-                setTimeout(() => {
-                    loader.style.opacity = '0';
-                    loader.style.pointerEvents = 'none';
-                    loader.style.transition = 'opacity 0.5s ease-out';
-                    
-                    setTimeout(() => {
-                        loader.style.display = 'none';
-                    }, 500);
-                }, 500);
-            });
-
-            // Fallback: hide after 10 seconds max
+        // Fade out after fully loaded
+        xhr.onload = function () {
             setTimeout(() => {
-                if (loader.style.display !== 'none') {
-                    clearInterval(simulationInterval);
-                    updateProgress(100);
-                    loader.style.opacity = '0';
-                    setTimeout(() => loader.style.display = 'none', 500);
-                }
-            }, 10000);
-        })();
+                loader.classList.add("opacity-0");
+                setTimeout(() => loader.remove(), 500);
+            }, 250);
+        };
+
+        xhr.send();
     </script>
 
 
@@ -1040,7 +964,7 @@
         });
     </script>
 
-    
+
 
 
     <script>

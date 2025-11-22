@@ -896,30 +896,15 @@
     </section>
 
     <!-- loading -->
-    <!-- ================= LOADER HTML ================= -->
+    <!-- ============ LOADER HTML ============ -->
     <div class="loader-wrapper" id="loader">
-        <div class="loader">
-            <div class="loading-text">
-                Loading
-                <span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
-            </div>
-            <div class="loading-bar-background">
-                <div class="loading-bar">
-                    <div class="white-bars-container">
-                        <div class="white-bar"></div>
-                        <div class="white-bar"></div>
-                        <div class="white-bar"></div>
-                        <div class="white-bar"></div>
-                        <div class="white-bar"></div>
-                        <div class="white-bar"></div>
-                        <div class="white-bar"></div>
-                        <div class="white-bar"></div>
-                        <div class="white-bar"></div>
-                        <div class="white-bar"></div>
-                    </div>
-                </div>
-            </div>
+        <div class="loading-text">Loading...</div>
+
+        <div class="progress-container">
+            <div class="progress-fill" id="progressFill"></div>
         </div>
+
+        <div class="progress-percent" id="progressPercent">0%</div>
     </div>
 
 
@@ -937,28 +922,43 @@
     </script>
 
     <script>
-        /* ================= DYNAMIC LOADER =================
-        
-        Loader muncul otomatis saat browser loading.
-        Loader hilang otomatis ketika halaman selesai dimuat,
-        mengikuti waktu loading asli dari browser.
-        
-        =============================================== */
+        /* ==================================================
+           REAL-TIME LOADING PROGRESS USING XHR
+           ================================================== */
 
-        document.onreadystatechange = function () {
-            const loader = document.getElementById("loader");
+        // ambil URL halaman saat ini
+        const url = window.location.href;
 
-            // Ketika status = "complete" → loading selesai
-            if (document.readyState === "complete") {
-                // Tambahkan sedikit delay biar smooth
-                setTimeout(() => {
-                    loader.style.opacity = "0";
-                    loader.style.pointerEvents = "none";
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", url, true);
+        xhr.responseType = "document";
 
-                    setTimeout(() => loader.style.display = "none", 400);
-                }, 300); // delay opsional
+        // elemen UI
+        const loader = document.getElementById("loader");
+        const progressFill = document.getElementById("progressFill");
+        const progressText = document.getElementById("progressPercent");
+
+        // event progress → REAL TIME
+        xhr.onprogress = function (event) {
+            if (event.lengthComputable) {
+                let percent = Math.round((event.loaded / event.total) * 100);
+
+                // update UI
+                progressFill.style.width = percent + "%";
+                progressText.innerText = percent + "%";
             }
         };
+
+        // setelah loading selesai
+        xhr.onload = function () {
+            setTimeout(() => {
+                loader.style.opacity = "0";
+                setTimeout(() => loader.remove(), 400);
+            }, 300);
+        };
+
+        // kirim request
+        xhr.send();
     </script>
 
 

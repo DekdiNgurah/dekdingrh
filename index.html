@@ -643,9 +643,9 @@
         </div>
     </section>
 
-    <section id="contacts" class="md:pt-10 lg:pt-0 lg:mt-28" style="border: 1px solid red;">
+    <section id="contacts" class="relative mt-20 lg:mt-28">
 
-        <div class="py-8 md:py-20 lg:py-24 pt-14 px-4 md:px-8 lg:px-14 bg-[var(--color-background)] w-full">
+        <div  class="py-8 md:py-20 lg:py-24 px-4 md:px-8 lg:px-14 bg-[var(--color-background)] w-full">
             <div class="mask overflow-hidden">
                 <div id="r1"
                     class="move-track flex gap-8 md:gap-16 lg:gap-28 font-smooch-sans uppercase text-[var(--color-white)] text-[16px] md:text-[20px] lg:text-[25px] font-semibold">
@@ -745,7 +745,8 @@
 
     </section>
 
-    <section id="contactMe" class="mt-12 md:mt-20 lg:mt-28 px-4 md:px-8 lg:px-28 pb-12 md:pb-16 lg:pb-20">
+
+    <section id="contactMe" class="relative mt-20 lg:mt-28 px-4 md:px-8 lg:px-28 pb-12 md:pb-16 lg:pb-20">
         <div class="w-full flex flex-col items-center">
             <h1
                 class="text-[50px] leading-[40px] md:leading-none md:text-[60px] lg:text-[100px] gradient-text uppercase font-medium w-fit text-center">
@@ -937,29 +938,29 @@
     </script>
 
     <script>
-/* ================= DYNAMIC LOADER =================
+        /* ================= DYNAMIC LOADER =================
+        
+        Loader muncul otomatis saat browser loading.
+        Loader hilang otomatis ketika halaman selesai dimuat,
+        mengikuti waktu loading asli dari browser.
+        
+        =============================================== */
 
-Loader muncul otomatis saat browser loading.
-Loader hilang otomatis ketika halaman selesai dimuat,
-mengikuti waktu loading asli dari browser.
+        document.onreadystatechange = function () {
+            const loader = document.getElementById("loader");
 
-=============================================== */
+            // Ketika status = "complete" → loading selesai
+            if (document.readyState === "complete") {
+                // Tambahkan sedikit delay biar smooth
+                setTimeout(() => {
+                    loader.style.opacity = "0";
+                    loader.style.pointerEvents = "none";
 
-document.onreadystatechange = function () {
-  const loader = document.getElementById("loader");
-
-  // Ketika status = "complete" → loading selesai
-  if (document.readyState === "complete") {
-    // Tambahkan sedikit delay biar smooth
-    setTimeout(() => {
-      loader.style.opacity = "0";
-      loader.style.pointerEvents = "none";
-
-      setTimeout(() => loader.style.display = "none", 400);
-    }, 300); // delay opsional
-  }
-};
-</script>
+                    setTimeout(() => loader.style.display = "none", 400);
+                }, 300); // delay opsional
+            }
+        };
+    </script>
 
 
     <script>

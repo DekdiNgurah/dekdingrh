@@ -921,44 +921,10 @@
         });
     </script>
 
-    <script>
-        /* ==================================================
-           REAL-TIME LOADING PROGRESS USING XHR
-           ================================================== */
-
-        // ambil URL halaman saat ini
-        const url = window.location.href;
-
-        const xhr = new XMLHttpRequest();
-        xhr.open("GET", url, true);
-        xhr.responseType = "document";
-
-        // elemen UI
-        const loader = document.getElementById("loader");
-        const progressFill = document.getElementById("progressFill");
-        const progressText = document.getElementById("progressPercent");
-
-        // event progress → REAL TIME
-        xhr.onprogress = function (event) {
-            if (event.lengthComputable) {
-                let percent = Math.round((event.loaded / event.total) * 100);
-
-                // update UI
-                progressFill.style.width = percent + "%";
-                progressText.innerText = percent + "%";
-            }
-        };
-
-        // setelah loading selesai
-        xhr.onload = function () {
-            setTimeout(() => {
-                loader.style.opacity = "0";
-                setTimeout(() => loader.remove(), 400);
-            }, 300);
-        };
-
-        // kirim request
-        xhr.send();
+    <script type="module">
+        import { initLoader } from './loader.js';
+        // default behavior: uses XMLHttpRequest and current window.location.href
+        initLoader({});
     </script>
 
 

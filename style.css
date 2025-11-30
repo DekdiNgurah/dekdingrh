@@ -17,6 +17,22 @@ html {
   --color-white: #EEEEEE;
 }
 
+.bg-darked {
+  background-color: var(--color-background);
+}
+
+.bg-whited {
+  background-color: var(--color-white);
+}
+
+.color-whited {
+  color: var(--color-white);
+}
+
+.color-texted {
+  color: var(--color-text);
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -27,11 +43,6 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
-}
-
-
-body {
-  height: 500vh;
 }
 
 .hide-x::-webkit-scrollbar {
@@ -281,9 +292,17 @@ body {
     width: 100%;
   }
 }
+
 @keyframes blink {
-  0%,100% { opacity: 0; }
-  50% { opacity: 1; }
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 
 

@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DEKDINGRH.</title>
 
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'"> -->
+    <!-- <noscript> -->
     <link rel="stylesheet" href="style.css">
+    <!-- </noscript> -->
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="dist/output.css">
 
-    <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16/dist/smooth-scroll.polyfills.min.js"></script>
-
+    <link rel="preconnect" href="https://embed.tawk.to" crossorigin>
 
     <script>
         tailwind.config = {
@@ -39,9 +41,10 @@
 
 </head>
 
-<body class="bg-[var(--color-white)] overflow-x-hidden">
+<body class="overflow-x-hidden" style="background-color: var(--color-white);">
 
-    <nav class="fixed top-0 z-50 left-0 w-full bg-[var(--color-white)] lg:px-28 py-2 md:py-4 lg:py-6 shadow">
+    <nav class="fixed top-0 z-50 left-0 w-full lg:px-28 py-2 md:py-4 lg:py-6 shadow"
+        style="background-color: var(--color-white);">
         <div id="nav" class="lg:max-w-screen-2xl mx-auto">
             <div class="flex justify-between items-center gap-36">
                 <div class="logo px-4 md:px-12 lg:px-0">
@@ -51,7 +54,7 @@
                 <!-- Tombol hamburger (baru) -->
                 <label id="menu-btn" class="hamburger lg:hidden cursor-pointer px-4 md:px-12">
                     <input type="checkbox" id="menu-toggle" />
-                    <svg viewBox="0 0 32 32" class="w-8 h-8 text-[var(--color-text)]">
+                    <svg viewBox="0 0 32 32" class="w-8 h-8 text-(--color-text)">
                         <path class="line line-top-bottom"
                             d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22">
                         </path>
@@ -61,28 +64,28 @@
 
 
                 <div id="menu"
-                    class="hidden lg:flex flex-col lg:flex-row lg:items-center lg:gap-20 absolute lg:static top-14 w-full lg:w-full bg-[var(--color-white)] lg:bg-transparent px-4 md:px-12 lg:px-0 py-5 lg:p-0 shadow lg:shadow-none z-50">
+                    class="hidden lg:flex flex-col lg:flex-row lg:items-center lg:gap-20 absolute lg:static top-14 w-full lg:w-full bg-(--color-white) lg:bg-transparent px-4 md:px-12 lg:px-0 py-5 lg:p-0 shadow lg:shadow-none z-50">
 
                     <div class="w-full">
                         <ul class="flex lg:flex-row flex-col lg:justify-between lg:items-center space-y-4 lg:space-y-0">
                             <li class="mb-0"><a href="#home"
-                                    class="text-[23px] uppercase font-smooch-sans font-semibold text-[var(--color-text)] hover:underline">Home</a>
+                                    class="text-[23px] uppercase font-smooch-sans font-semibold text-(--color-text) hover:underline">Home</a>
                             </li>
                             <li class=""><a href="#about"
-                                    class="text-[23px] uppercase font-smooch-sans font-semibold text-[var(--color-text)] hover:underline">about
+                                    class="text-[23px] uppercase font-smooch-sans font-semibold text-(--color-text) hover:underline">about
                                     me</a>
                             </li>
                             <li class=""><a href="#services"
-                                    class="text-[23px] uppercase font-smooch-sans font-semibold text-[var(--color-text)] hover:underline">Services</a>
+                                    class="text-[23px] uppercase font-smooch-sans font-semibold text-(--color-text) hover:underline">Services</a>
                             </li>
                             <li class=""><a href="#projects"
-                                    class="text-[23px] uppercase font-smooch-sans font-semibold text-[var(--color-text)] hover:underline">projects</a>
+                                    class="text-[23px] uppercase font-smooch-sans font-semibold text-(--color-text) hover:underline">projects</a>
                             </li>
                             <li class=""><a href="#certificates"
-                                    class="text-[23px] uppercase font-smooch-sans font-semibold text-[var(--color-text)] hover:underline">certificates</a>
+                                    class="text-[23px] uppercase font-smooch-sans font-semibold text-(--color-text) hover:underline">certificates</a>
                             </li>
                             <li><a href="#contacts"
-                                    class="text-[23px] uppercase font-smooch-sans font-semibold text-[var(--color-text)] hover:underline">contact</a>
+                                    class="text-[23px] uppercase font-smooch-sans font-semibold text-(--color-text) hover:underline">contact</a>
                             </li>
                         </ul>
                     </div>
@@ -98,7 +101,7 @@
                         </a>
 
                         <div id="tooltip-instagram" role="tooltip"
-                            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[var(--color-white)] bg-[var(--color-background)] rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700">
+                            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-(--color-white)] bg-(--color-background)] rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700">
                             Instagram
                             <div class="tooltip-arrow" data-popper-arrow></div>
                         </div>
@@ -113,7 +116,7 @@
                         </a>
 
                         <div id="tooltip-whatsapp" role="tooltip"
-                            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[var(--color-white)] bg-[var(--color-background)] rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700">
+                            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-(--color-white)] bg-(--color-background)] rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700">
                             Whatsapp
                             <div class="tooltip-arrow" data-popper-arrow></div>
                         </div>
@@ -128,7 +131,7 @@
                         </a>
 
                         <div id="tooltip-github" role="tooltip"
-                            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[var(--color-white)] bg-[var(--color-background)]00 rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700">
+                            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-(--color-white)] bg-(--color-background)]00 rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700">
                             Github
                             <div class="tooltip-arrow" data-popper-arrow></div>
                         </div>
@@ -143,7 +146,7 @@
                         </a>
 
                         <div id="tooltip-linkedin" role="tooltip"
-                            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[var(--color-white)] bg-[var(--color-background)] rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700">
+                            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-(--color-white)] bg-(--color-background)] rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700">
                             Linkedin
                             <div class="tooltip-arrow" data-popper-arrow></div>
                         </div>
@@ -160,7 +163,7 @@
         <div class="lg:px-28 max-w-screen-2xl mx-auto text-center relative">
             <div class="absolute inset-0">
                 <p
-                    class="text-xl sm:text-2xl md:text-3xl lg:text-[50px] text-[var(--color-text)] font-smooch-sans mb-3 leading-snug">
+                    class="text-xl sm:text-2xl md:text-3xl lg:text-[50px] text-(--color-text) font-smooch-sans mb-3 leading-snug">
                     Hello, I'm <strong>Ngurah</strong>, I'm a..
                 </p>
 
@@ -172,7 +175,7 @@
             <div class="relative grid md:grid-cols-[1fr_2fr_1fr] pt-[100px] md:pt-[50px] lg:pt-[70px]">
                 <div class="flex flex-col hidden md:block">
                     <h1
-                        class="uppercase font-semibold md:text-[22px] lg:text-[38px] font-smooch-sans md:pt-24 lg:pt-52 text-[var(--color-text)] text-start">
+                        class="uppercase font-semibold md:text-[22px] lg:text-[38px] font-smooch-sans md:pt-24 lg:pt-52 text-(--color-text) text-start">
                         I AM PASSIONATE ABOUT CREATING WEBSITES THAT STAND OUT FROM THE CROWD.
                     </h1>
                 </div>
@@ -183,12 +186,12 @@
                     <div class="flex flex-col justify-between h-full md:py-24 lg:py-52">
                         <div class="">
                             <h1
-                                class="uppercase text-end font-semibold md:text-[22px] lg:text-[38px] font-smooch-sans text-[var(--color-text)]">
+                                class="uppercase text-end font-semibold md:text-[22px] lg:text-[38px] font-smooch-sans text-(--color-text)">
                                 LET'S CONNECT!
                             </h1>
                             <div class="flex justify-end w-full">
                                 <a href="#contacts"
-                                    class="flex mt-4 md:px-2 lg:px-4 md:py-2 lg:py-4 border-2 border-[var(--color-text)] rounded-full w-fit rotate-[25deg] cursor-pointer hover:rotate-0 transition duration-300 ease-out">
+                                    class="flex mt-4 md:px-2 lg:px-4 md:py-2 lg:py-4 border-2 border-(--color-text)] rounded-full w-fit rotate-[25deg] cursor-pointer hover:rotate-0 transition duration-300 ease-out">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24">
                                         <path fill="none" stroke="#333333" stroke-linecap="round"
                                             stroke-linejoin="round" d="M12.013 3L12 20.789m7-6.776L12 21l-7-6.988"
@@ -199,19 +202,19 @@
                         </div>
                         <div class="">
                             <h1
-                                class="uppercase font-smooch-sans font-semibold md:text-[22px] lg:text-[37px] text-[var(--color-text)] text-end">
+                                class="uppercase font-smooch-sans font-semibold md:text-[22px] lg:text-[37px] text-(--color-text) text-end">
                                 ui/ux</h1>
                             <h1
-                                class="uppercase font-smooch-sans font-semibold md:text-[22px] lg:text-[37px] text-[var(--color-text)] text-end">
+                                class="uppercase font-smooch-sans font-semibold md:text-[22px] lg:text-[37px] text-(--color-text) text-end">
                                 web design</h1>
                             <h1
-                                class="uppercase font-smooch-sans font-semibold md:text-[22px] lg:text-[37px] text-[var(--color-text)] text-end">
+                                class="uppercase font-smooch-sans font-semibold md:text-[22px] lg:text-[37px] text-(--color-text) text-end">
                                 landing page</h1>
                             <h1
-                                class="uppercase font-smooch-sans font-semibold md:text-[22px] lg:text-[37px] text-[var(--color-text)] text-end">
+                                class="uppercase font-smooch-sans font-semibold md:text-[22px] lg:text-[37px] text-(--color-text) text-end">
                                 ui design figma</h1>
                             <h1
-                                class="uppercase font-smooch-sans font-semibold md:text-[22px] lg:text-[37px] text-[var(--color-text)] text-end">
+                                class="uppercase font-smooch-sans font-semibold md:text-[22px] lg:text-[37px] text-(--color-text) text-end">
                                 webflow</h1>
                         </div>
                     </div>
@@ -302,7 +305,7 @@
             <div class="absolute right-0 bottom-2 md:bottom-0">
                 <div class="flex justify-end w-full">
                     <span
-                        class="flex mt-4 md:px-2 lg:px-4 md:py-2 lg:py-4 border lg:border-2 border-[var(--color-text)] rounded-full w-fit rotate-[230deg] cursor-pointer hover:rotate-[270deg] transition duration-300 ease-out">
+                        class="flex mt-4 md:px-2 lg:px-4 md:py-2 lg:py-4 border lg:border-2 border-(--color-text)] rounded-full w-fit rotate-[230deg] cursor-pointer hover:rotate-[270deg] transition duration-300 ease-out">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 md:w-8 md:h-8 lg:w-12 lg:h-12"
                             viewBox="0 0 24 24">
                             <path fill="none" stroke="#333333" stroke-linecap="round" stroke-linejoin="round"
@@ -314,7 +317,7 @@
         </div>
         <div class="">
             <p
-                class="font-smooch-sans font-semibold text-[var(--color-text)] text-[20px] md:text-[22px] lg:text-[25px] text-justify lg:text-end">
+                class="font-smooch-sans font-semibold text-(--color-text) text-[20px] md:text-[22px] lg:text-[25px] text-justify lg:text-end">
                 Hi there! My Name Is Ngurah, I am a web developer skilled in HTML, CSS, Tailwind CSS, Bootstrap, and
                 MySQL. I create responsive, user-friendly websites optimized for speed, SEO, and performance. With
                 experience completing several large-scale projects, I enjoy turning ideas into interactive web
@@ -324,8 +327,7 @@
         </div>
     </section>
 
-    <section
-        class="mt-10 lg:mt-20 px-5 md:px-12 lg:px-28 flex flex-col md:flex-row w-full w-full text-[var(--color-text)]">
+    <section class="mt-10 lg:mt-20 px-5 md:px-12 lg:px-28 flex flex-col md:flex-row w-full w-full text-(--color-text)">
         <div class="py-10 lg:py-14 border border-gray-600 flex flex-col justify-center items-center uppercase w-full">
             <h1 class="text-[50px] md:text-[40px] lg:text-[90px] font-inter font-medium">15+</h1>
             <h3 class="text-[20px] md:text-[16px] lg:text-[25px] font-righteous">projects completed</h3>
@@ -348,7 +350,7 @@
                 FEATURED <br class="block md:hidden">
                 PROJECTS</h1>
             <p
-                class="font-smooch-sans text-[20px] md:text-[22px] lg:text-[25px] text-center font-semibold text-[var(--color-text)]">
+                class="font-smooch-sans text-[20px] md:text-[22px] lg:text-[25px] text-center font-semibold text-(--color-text)">
                 Every website
                 tells a
                 story. Here are our featured projects that turn visions into immersive digital realities.</p>
@@ -376,9 +378,19 @@
                     <!-- Card 1 -->
                     <article
                         class="snap-start shrink-0 min-w-[300px] max-w-[300px] md:min-w-[555px] md:max-w-[555px] flex flex-col">
-                        <div class="w-full h-[250px] md:h-[350px] lg:h-[500px] overflow-hidden rounded-lg">
+                        <div class="w-full h-[250px] md:h-[350px] lg:h-[500px] overflow-hidden rounded-lg relative">
                             <img src="assets/ajikbalitransportpamflet.webp" alt="AJIK BALI TRANSPORT"
                                 class="w-full h-full object-cover">
+
+                            <span class="absolute z-10 bottom-2 mb-3 w-fit h-fit">
+                                <a href="javascript:void(0)" class="py-2 px-5 font-smooch-sans text-lg md:text-xl rounded-xl
+                                    backdrop-blur-lg rounded
+                                    shadow-[0_4px_20px_rgba(0,0,0,0.1)] cursor-pointer"
+                                    style="margin-inline-start: 10px; background-color: rgba(255, 255, 255, 0.419);">
+                                    Live preview
+                                </a>
+                            </span>
+
                         </div>
                         <div class="pt-4">
                             <h3 class="gradient-text text-[25px] md:text-[30px] lg:text-[40px] w-fit uppercase">
@@ -401,17 +413,24 @@
                     <!-- Card 2 -->
                     <article
                         class="snap-start shrink-0 min-w-[300px] max-w-[300px] md:min-w-[555px] md:max-w-[555px] flex flex-col">
-                        <div class="w-full h-[250px] md:h-[350px] lg:h-[500px] overflow-hidden rounded-lg">
-                            <img src="assets/PAMFLET ABT.png" alt="AJIK BALI TRANSPORT"
+                        <div class="w-full h-[250px] md:h-[350px] lg:h-[500px] overflow-hidden rounded-lg relative">
+                            <img src="assets/arunainsancendekiapamflet.webp" alt="ARUNA INSAN CENDEKIA"
                                 class="w-full h-full object-cover">
+
+                            <span class="absolute z-10 bottom-2 mb-3 w-fit h-fit">
+                                <a href="javascript:void(0)" class="py-2 px-5 font-smooch-sans text-lg md:text-xl rounded-xl
+                                    backdrop-blur-lg rounded
+                                    shadow-[0_4px_20px_rgba(0,0,0,0.1)] cursor-pointer"
+                                    style="margin-inline-start: 10px; background-color: rgba(255, 255, 255, 0.419);">
+                                    Live preview
+                                </a>
+                            </span>
                         </div>
                         <div class="pt-4">
                             <h3 class="gradient-text text-[25px] md:text-[30px] lg:text-[40px] w-fit uppercase">
-                                AJIK BALI
-                                TRANSPORT</h3>
+                                ARUNA INSAN CENDEKIA</h3>
                             <p class="text-[20px] md:text-[22px] lg:text-[25px] font-smooch-sans font-medium">A
-                                transportation service that offers the
-                                best experience for your travel needs.</p>
+                                Bookstore that offers a wide range of books and reading materials.</p>
                         </div>
                         <div class="flex flex-wrap gap-2 mt-3">
                             <span
@@ -421,14 +440,25 @@
                             <span
                                 class="px-3 py-1 md:px-4 md:py-2 bg-gray-400 rounded-full text-white text-[15px] md:text-[18px] font-smooch-sans">jQuery</span>
                         </div>
+
+
                     </article>
 
                     <!-- Card 3 -->
                     <article
                         class="snap-start shrink-0 min-w-[300px] max-w-[300px] md:min-w-[555px] md:max-w-[555px] flex flex-col">
-                        <div class="w-full h-[250px] md:h-[350px] lg:h-[500px] overflow-hidden rounded-lg">
-                            <img src="assets/PAMFLET ABT.png" alt="AJIK BALI TRANSPORT"
+                        <div class="w-full h-[250px] md:h-[350px] lg:h-[500px] overflow-hidden rounded-lg relative">
+                            <img src="assets/ajikbalitransportpamflet.webp" alt="AJIK BALI TRANSPORT"
                                 class="w-full h-full object-cover">
+
+                            <span class="absolute z-10 bottom-2 mb-3 w-fit h-fit">
+                                <a href="javascript:void(0)" class="py-2 px-5 font-smooch-sans text-lg md:text-xl rounded-xl
+                                    backdrop-blur-lg rounded
+                                    shadow-[0_4px_20px_rgba(0,0,0,0.1)] cursor-pointer"
+                                    style="margin-inline-start: 10px; background-color: rgba(255, 255, 255, 0.419);">
+                                    Live preview
+                                </a>
+                            </span>
                         </div>
                         <div class="pt-4">
                             <h3 class="gradient-text text-[25px] md:text-[30px] lg:text-[40px] w-fit uppercase">
@@ -453,7 +483,7 @@
 
         <div class="flex items-center justify-center w-full mt-8 md:mt-14 lg:mt-20">
             <a href="javascript:void(0)"
-                class="group px-6 py-2 md:px-10 md:py-2 bg-[var(--color-background)] text-[#eeeeee] font-smooch-sans text-xl md:text-2xl hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 w-fit">
+                class="group px-6 py-2 md:px-10 md:py-2 bg-(--color-background)] text-[#eeeeee] font-smooch-sans text-xl md:text-2xl hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 w-fit">
                 See all projects
                 <span class="rotate-[-35deg] group-hover:rotate-0 transition duration-300 ease-out">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-auto" viewBox="0 0 24 24">
@@ -471,7 +501,7 @@
                 class="text-[50px] leading-[50px] md:leading-none md:text-[60px] lg:text-[100px] gradient-text font-medium w-fit text-center">
                 SERVICES I <br class="block md:hidden"> PROVIDE</h1>
             <p
-                class="font-smooch-sans text-[20px] md:text-[22px] lg:text-[25px] text-center font-semibold text-[var(--color-text)]">
+                class="font-smooch-sans text-[20px] md:text-[22px] lg:text-[25px] text-center font-semibold text-(--color-text)">
                 Creating visually appealing and functional websites tailored to the client's needs and goals providing a
                 consistent user experience across platform.</p>
         </div>
@@ -480,8 +510,7 @@
             <div class="w-full md:w-1/2 lg:w-1/3 mt-8 md:p-4">
                 <div class="shadow p-6 h-full flex flex-col">
                     <img src="assets/webdevelopment.webp" alt="" class="w-9 h-9 lg:w-12 lg:h-12">
-                    <h2
-                        class="text-[25px] md:text-[30px] md:mb-4 font-righteous text-[var(--color-text)] w-fit uppercase">
+                    <h2 class="text-[25px] md:text-[30px] md:mb-4 font-righteous text-(--color-text) w-fit uppercase">
                         WEB DEVELOPMENT SERVICE
                     </h2>
                     <p class="flex-grow text-[20px] md:text-[22px] lg:text-[25px] font-smooch-sans font-medium">I build
@@ -493,8 +522,7 @@
             <div class="w-full md:w-1/2 lg:w-1/3 mt-4 md:p-4">
                 <div class="shadow p-6 h-full flex flex-col">
                     <img src="assets/uiux.webp" alt="" class="w-9 h-9 lg:w-12 lg:h-12">
-                    <h2
-                        class="text-[25px] md:text-[30px] md:mb-4 font-righteous text-[var(--color-text)] w-fit uppercase">
+                    <h2 class="text-[25px] md:text-[30px] md:mb-4 font-righteous text-(--color-text) w-fit uppercase">
                         WEB DESIGN
                         UI/UX</h2>
                     <p class="flex-grow text-[20px] md:text-[22px] lg:text-[25px] font-smooch-sans font-medium">I design
@@ -505,8 +533,7 @@
             <div class="w-full md:w-1/2 lg:w-1/3 mt-4 md:p-4">
                 <div class="shadow p-6 h-full flex flex-col">
                     <img src="assets/weboptimization.webp" alt="" class="w-9 h-9 lg:w-12 lg:h-12">
-                    <h2
-                        class="text-[25px] md:text-[30px] md:mb-4 font-righteous text-[var(--color-text)] w-fit uppercase">
+                    <h2 class="text-[25px] md:text-[30px] md:mb-4 font-righteous text-(--color-text) w-fit uppercase">
                         WEB
                         OPTIMIZATION & MAINTENANCE</h2>
                     <p class="flex-grow text-[20px] md:text-[22px] lg:text-[25px] font-smooch-sans font-medium">I keep
@@ -518,8 +545,7 @@
             <div class="w-full md:w-1/2 lg:w-1/3 mt-4 md:p-4">
                 <div class="shadow p-6 h-full flex flex-col">
                     <img src="assets/webdeployment.webp" alt="" class="w-9 h-9 lg:w-12 lg:h-12">
-                    <h2
-                        class="text-[25px] md:text-[30px] md:mb-4 font-righteous text-[var(--color-text)] w-fit uppercase">
+                    <h2 class="text-[25px] md:text-[30px] md:mb-4 font-righteous text-(--color-text) w-fit uppercase">
                         DEVELOPMENT & hosting
                     </h2>
                     <p class="flex-grow text-[20px] md:text-[22px] lg:text-[25px] font-smooch-sans font-medium">I handle
@@ -531,8 +557,7 @@
             <div class="w-full md:w-1/2 lg:w-1/3 mt-4 md:p-4">
                 <div class="shadow p-6 h-full flex flex-col">
                     <img src="assets/customweb.webp" alt="" class="w-9 h-9 lg:w-12 lg:h-12">
-                    <h2
-                        class="text-[25px] md:text-[30px] md:mb-4 font-righteous text-[var(--color-text)] w-fit uppercase">
+                    <h2 class="text-[25px] md:text-[30px] md:mb-4 font-righteous text-(--color-text) w-fit uppercase">
                         CUSTOM WEB SOLUTIONS</h2>
                     <p class="flex-grow text-[20px] md:text-[22px] lg:text-[25px] font-smooch-sans font-medium">I
                         develop custom web applications tailored to specific needs, such as booking systems, dashboards,
@@ -543,8 +568,7 @@
             <div class="w-full md:w-1/2 lg:w-1/3 mt-4 md:p-4">
                 <div class="shadow p-6 h-full flex flex-col">
                     <img src="assets/consultation.webp" alt="" class="w-9 h-9 lg:w-12 lg:h-12">
-                    <h2
-                        class="text-[25px] md:text-[30px] md:mb-4 font-righteous text-[var(--color-text)] w-fit uppercase">
+                    <h2 class="text-[25px] md:text-[30px] md:mb-4 font-righteous text-(--color-text) w-fit uppercase">
                         consultation & support</h2>
                     <p class="flex-grow text-[20px] md:text-[22px] lg:text-[25px] font-smooch-sans font-medium">I
                         provide project consultation and ongoing support to help clients make the right technical
@@ -561,7 +585,7 @@
                 class="text-[50px] leading-[50px] md:leading-none md:text-[60px] lg:text-[100px] gradient-text font-medium w-fit text-center">
                 MILESTONES & <br> CERTIFICATES</h1>
             <p
-                class="font-smooch-sans text-[20px] md:text-[22px] lg:text-[25px] text-center font-semibold text-[var(--color-text)]">
+                class="font-smooch-sans text-[20px] md:text-[22px] lg:text-[25px] text-center font-semibold text-(--color-text)">
                 A showcase of my journey through various projects, competitions, and professional activities. Each
                 certificate represents a milestone in my growth and continuous learning as a developer.</p>
         </div>
@@ -631,7 +655,7 @@
 
         <div class="flex items-center justify-center w-full mt-8 md:mt-14 lg:mt-20">
             <a href="javascript:void(0)"
-                class="group px-6 py-2 md:px-10 md:py-2 bg-[var(--color-background)] text-[#eeeeee] font-smooch-sans text-xl md:text-2xl hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 w-fit">
+                class="group px-6 py-2 md:px-10 md:py-2 bg-(--color-background)] text-[#eeeeee] font-smooch-sans text-xl md:text-2xl hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 w-fit">
                 See all certificates
                 <span class="rotate-[-35deg] group-hover:rotate-0 transition duration-300 ease-out">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-auto" viewBox="0 0 24 24">
@@ -646,10 +670,10 @@
     <section id="contacts" class="mt-20 lg:mt-28">
         <section class="relative">
 
-            <div class="py-8 md:py-20 lg:py-24 px-4 md:px-8 lg:px-14 bg-[var(--color-background)] w-full">
+            <div class="py-8 md:py-20 lg:py-24 px-4 md:px-8 lg:px-14 bg-(--color-background)] w-full">
                 <div class="mask overflow-hidden">
                     <div id="r1"
-                        class="move-track flex gap-8 md:gap-16 lg:gap-28 font-smooch-sans uppercase text-[var(--color-white)] text-[16px] md:text-[20px] lg:text-[25px] font-semibold">
+                        class="move-track flex gap-8 md:gap-16 lg:gap-28 font-smooch-sans uppercase text-(--color-white)] text-[16px] md:text-[20px] lg:text-[25px] font-semibold">
                         <h2>instagram</h2>
                         <h2>whatsapp</h2>
                         <h2>linkedin</h2>
@@ -674,7 +698,7 @@
 
                 <div class="mask overflow-hidden mt-3 md:mt-4 lg:mt-5 flex justify-end">
                     <div id="r2"
-                        class="move-track flex gap-8 md:gap-16 lg:gap-28 font-smooch-sans uppercase text-[var(--color-white)] text-[16px] md:text-[20px] lg:text-[25px] font-semibold">
+                        class="move-track flex gap-8 md:gap-16 lg:gap-28 font-smooch-sans uppercase text-(--color-white)] text-[16px] md:text-[20px] lg:text-[25px] font-semibold">
                         <h2>instagram</h2>
                         <h2>whatsapp</h2>
                         <h2>linkedin</h2>
@@ -706,39 +730,39 @@
                 <div class="px-4 md:px-6 lg:px-10 mt-6 md:mt-8">
                     <div class="flex flex-col md:flex-row gap-3 md:gap-4 lg:gap-0 md:justify-between flex-wrap">
                         <a href="javascript:void(0)"
-                            class="uppercase font-smooch-sans font-medium text-[20px] md:text-[28px] lg:text-[40px] bg-[var(--color-white)] px-6 md:px-10 lg:px-14 py-1 md:py-2 lg:py-2 border hover:bg-gray-300 transition duration-300 rounded-full text-center">
+                            class="uppercase font-smooch-sans font-medium text-[20px] md:text-[28px] lg:text-[40px] bg-(--color-white) px-6 md:px-10 lg:px-14 py-1 md:py-2 lg:py-2 border hover:bg-gray-300 transition duration-300 rounded-full text-center">
                             instagram
                         </a>
 
                         <a href="javascript:void(0)"
-                            class="uppercase font-smooch-sans font-medium text-[20px] md:text-[28px] lg:text-[40px] bg-[var(--color-white)] px-6 md:px-10 lg:px-14 py-1 md:py-2 lg:py-2 border hover:bg-gray-300 transition duration-300 rounded-full text-center">
+                            class="uppercase font-smooch-sans font-medium text-[20px] md:text-[28px] lg:text-[40px] bg-(--color-white) px-6 md:px-10 lg:px-14 py-1 md:py-2 lg:py-2 border hover:bg-gray-300 transition duration-300 rounded-full text-center">
                             whatsapp
                         </a>
 
                         <a href="javascript:void(0)"
-                            class="uppercase font-smooch-sans font-medium text-[20px] md:text-[28px] lg:text-[40px] bg-[var(--color-white)] px-6 md:px-10 lg:px-14 py-1 md:py-2 lg:py-2 border hover:bg-gray-300 transition duration-300 rounded-full text-center">
+                            class="uppercase font-smooch-sans font-medium text-[20px] md:text-[28px] lg:text-[40px] bg-(--color-white) px-6 md:px-10 lg:px-14 py-1 md:py-2 lg:py-2 border hover:bg-gray-300 transition duration-300 rounded-full text-center">
                             linkedin
                         </a>
 
                         <a href="javascript:void(0)"
-                            class="uppercase font-smooch-sans font-medium text-[20px] md:text-[28px] lg:text-[40px] bg-[var(--color-white)] px-6 md:px-10 lg:px-14 py-1 md:py-2 lg:py-2 border hover:bg-gray-300 transition duration-300 rounded-full text-center">
+                            class="uppercase font-smooch-sans font-medium text-[20px] md:text-[28px] lg:text-[40px] bg-(--color-white) px-6 md:px-10 lg:px-14 py-1 md:py-2 lg:py-2 border hover:bg-gray-300 transition duration-300 rounded-full text-center">
                             github
                         </a>
 
                         <a href="#contactMe"
-                            class="uppercase font-smooch-sans font-medium text-[20px] md:text-[28px] lg:text-[40px] border border-[var(--color-white)] px-6 md:px-10 lg:px-14 py-1 md:py-2 lg:py-2 hover:bg-[var(--color-white)] hover:text-[var(--color-text)] text-[var(--color-white)] transition duration-300 rounded-full text-center">
+                            class="uppercase font-smooch-sans font-medium text-[20px] md:text-[28px] lg:text-[40px] border border-(--color-white)] px-6 md:px-10 lg:px-14 py-1 md:py-2 lg:py-2 hover:bg-(--color-white) hover:text-(--color-text) text-(--color-white)] transition duration-300 rounded-full text-center">
                             contact me
                         </a>
                     </div>
                     <div class="flex flex-col md:flex-row justify-between gap-4 md:gap-0 mt-6 md:mt-8">
                         <p
-                            class="font-smooch-sans uppercase text-[16px] md:text-[18px] lg:text-[25px] text-[var(--color-white)]">
+                            class="font-smooch-sans uppercase text-[16px] md:text-[18px] lg:text-[25px] text-(--color-white)]">
                             &copy;
                             <strong>dekdingrh.</strong> 2025 all right reserved.
                         </p>
 
                         <p
-                            class="font-smooch-sans uppercase text-[16px] md:text-[18px] lg:text-[25px] text-[var(--color-white)]">
+                            class="font-smooch-sans uppercase text-[16px] md:text-[18px] lg:text-[25px] text-(--color-white)]">
                             by dekdi ngurah.</p>
                     </div>
                 </div>
@@ -752,7 +776,7 @@
                     class="text-[50px] leading-[40px] md:leading-none md:text-[60px] lg:text-[100px] gradient-text uppercase font-medium w-fit text-center">
                     Contact me</h1>
                 <p
-                    class="font-smooch-sans text-[20px] md:text-[22px] lg:text-[25px] text-center font-semibold text-[var(--color-text)] mt-2 md:mt-3 lg:mt-4 max-w-2xl">
+                    class="font-smooch-sans text-[20px] md:text-[22px] lg:text-[25px] text-center font-semibold text-(--color-text) mt-2 md:mt-3 lg:mt-4 max-w-2xl">
                     Contact me to build cooperation between us. I am open to every message I receive!</p>
             </div>
 
@@ -761,7 +785,7 @@
 
                     <div class="flex flex-col justify-start">
                         <label for="input-name"
-                            class="block uppercase text-[var(--color-text)] text-[18px] md:text-[20px] lg:text-[25px] font-semibold font-smooch-sans mb-1 md:mb-2">
+                            class="block uppercase text-(--color-text) text-[18px] md:text-[20px] lg:text-[25px] font-semibold font-smooch-sans mb-1 md:mb-2">
                             Your name</label>
                         <div class="relative">
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -779,7 +803,7 @@
 
                     <div class="flex flex-col justify-start">
                         <label for="input-phone"
-                            class="block uppercase text-[var(--color-text)] text-[18px] md:text-[20px] lg:text-[25px] font-semibold font-smooch-sans mb-1 md:mb-2">
+                            class="block uppercase text-(--color-text) text-[18px] md:text-[20px] lg:text-[25px] font-semibold font-smooch-sans mb-1 md:mb-2">
                             Your phone number</label>
                         <div class="relative">
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -804,7 +828,7 @@
 
                     <div class="flex flex-col justify-start">
                         <label for="input-email"
-                            class="block uppercase text-[var(--color-text)] text-[18px] md:text-[20px] lg:text-[25px] font-semibold font-smooch-sans mb-1 md:mb-2">
+                            class="block uppercase text-(--color-text) text-[18px] md:text-[20px] lg:text-[25px] font-semibold font-smooch-sans mb-1 md:mb-2">
                             Your email</label>
                         <div class="relative">
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -836,7 +860,7 @@
 
                     <div class="flex flex-col justify-start">
                         <label for="input-subject"
-                            class="block uppercase text-[var(--color-text)] text-[18px] md:text-[20px] lg:text-[25px] font-semibold font-smooch-sans mb-1 md:mb-2">
+                            class="block uppercase text-(--color-text) text-[18px] md:text-[20px] lg:text-[25px] font-semibold font-smooch-sans mb-1 md:mb-2">
                             subject</label>
                         <div class="relative">
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -868,7 +892,7 @@
 
                     <div class="flex flex-col col-span-1 md:col-span-2 justify-start">
                         <label for="message"
-                            class="block uppercase text-[var(--color-text)] text-[18px] md:text-[20px] lg:text-[25px] font-semibold font-smooch-sans mb-1 md:mb-2">
+                            class="block uppercase text-(--color-text) text-[18px] md:text-[20px] lg:text-[25px] font-semibold font-smooch-sans mb-1 md:mb-2">
                             message</label>
                         <textarea id="message" rows="4"
                             class="block p-2 font-smooch-sans w-full text-[16px] md:text-[18px] lg:text-[20px] text-gray-900 bg-gray-50 rounded border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
@@ -877,7 +901,7 @@
 
                     <div class="flex w-fit h-fit">
                         <button type="submit"
-                            class="group px-6 py-2 md:px-10 md:py-2 bg-[var(--color-background)] text-[#eeeeee] font-smooch-sans text-xl md:text-2xl hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 w-fit">
+                            class="group px-6 py-2 md:px-10 md:py-2 bg-(--color-background)] text-[#eeeeee] font-smooch-sans text-xl md:text-2xl hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 w-fit">
                             Send Message
                             <span class="rotate-[-35deg] group-hover:rotate-0 transition duration-300 ease-out">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-auto" viewBox="0 0 24 24">
@@ -909,13 +933,20 @@
 
             <div class="loading-bar-background" aria-hidden="true">
                 <!-- .loading-bar is the fill that will be updated in JS -->
-                <div class="loading-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+                <div class="loading-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                </div>
 
                 <!-- decorative bars stay on top -->
                 <div class="white-bars-container" aria-hidden="true">
-                    <div class="white-bar"></div><div class="white-bar"></div><div class="white-bar"></div>
-                    <div class="white-bar"></div><div class="white-bar"></div><div class="white-bar"></div>
-                    <div class="white-bar"></div><div class="white-bar"></div><div class="white-bar"></div>
+                    <div class="white-bar"></div>
+                    <div class="white-bar"></div>
+                    <div class="white-bar"></div>
+                    <div class="white-bar"></div>
+                    <div class="white-bar"></div>
+                    <div class="white-bar"></div>
+                    <div class="white-bar"></div>
+                    <div class="white-bar"></div>
+                    <div class="white-bar"></div>
                     <div class="white-bar"></div>
                 </div>
             </div>
@@ -927,88 +958,88 @@
     </div>
 
     <script>
-    (function realtimeLoader(){
-        const loader = document.getElementById('loader');
-        const bar = document.querySelector('.loading-bar');
-        const pct = document.getElementById('progressPercent');
-        if (!loader || !bar) return;
+        (function realtimeLoader() {
+            const loader = document.getElementById('loader');
+            const bar = document.querySelector('.loading-bar');
+            const pct = document.getElementById('progressPercent');
+            if (!loader || !bar) return;
 
-        let lastProgress = 0;
-        const MAX_BEFORE_DONE = 98; // avoid showing 100% until final
-        const MIN_START = 5;
+            let lastProgress = 0;
+            const MAX_BEFORE_DONE = 98; // avoid showing 100% until final
+            const MIN_START = 5;
 
-        function setProgress(n){
-            n = Math.max(n, lastProgress); // don't regress
-            n = Math.min(n, 100);
-            lastProgress = n;
-            bar.style.width = n + '%';
-            bar.setAttribute('aria-valuenow', Math.round(n));
-            if (pct) pct.textContent = Math.round(n) + '%';
-        }
+            function setProgress(n) {
+                n = Math.max(n, lastProgress); // don't regress
+                n = Math.min(n, 100);
+                lastProgress = n;
+                bar.style.width = n + '%';
+                bar.setAttribute('aria-valuenow', Math.round(n));
+                if (pct) pct.textContent = Math.round(n) + '%';
+            }
 
-        // initial kick
-        setProgress(MIN_START);
+            // initial kick
+            setProgress(MIN_START);
 
-        // Poll resource timing and compute a conservative progress
-        let poll = setInterval(() => {
-            try {
-                const resources = (performance.getEntriesByType && performance.getEntriesByType('resource')) || [];
-                // exclude navigation and be tolerant for low counts
-                const total = Math.max(resources.length, 6);
-                let loaded = 0;
-                for (let i = 0; i < resources.length; i++) {
-                    const r = resources[i];
-                    // resource considered loaded when responseEnd > 0 or transferSize > 0
-                    if ((r.responseEnd && r.responseEnd > 0) || (r.transferSize && r.transferSize > 0) || (r.encodedBodySize && r.encodedBodySize > 0)) loaded++;
+            // Poll resource timing and compute a conservative progress
+            let poll = setInterval(() => {
+                try {
+                    const resources = (performance.getEntriesByType && performance.getEntriesByType('resource')) || [];
+                    // exclude navigation and be tolerant for low counts
+                    const total = Math.max(resources.length, 6);
+                    let loaded = 0;
+                    for (let i = 0; i < resources.length; i++) {
+                        const r = resources[i];
+                        // resource considered loaded when responseEnd > 0 or transferSize > 0
+                        if ((r.responseEnd && r.responseEnd > 0) || (r.transferSize && r.transferSize > 0) || (r.encodedBodySize && r.encodedBodySize > 0)) loaded++;
+                    }
+                    // scale to 10..90 range (leave headroom)
+                    const percent = 10 + (loaded / total) * 80;
+                    const capped = Math.min(percent, MAX_BEFORE_DONE);
+                    if (capped > lastProgress) setProgress(capped);
+                } catch (e) {
+                    // graceful no-op
                 }
-                // scale to 10..90 range (leave headroom)
-                const percent = 10 + (loaded / total) * 80;
-                const capped = Math.min(percent, MAX_BEFORE_DONE);
-                if (capped > lastProgress) setProgress(capped);
-            } catch (e) {
-                // graceful no-op
-            }
-        }, 120);
+            }, 120);
 
-        // gentle simulated progress so bar moves even if resource info is sparse
-        const simInterval = setInterval(() => {
-            if (lastProgress < 60) setProgress(lastProgress + (Math.random() * 6 + 2));
-            else if (lastProgress < MAX_BEFORE_DONE) setProgress(lastProgress + (Math.random() * 2 + 0.5));
-        }, 300);
+            // gentle simulated progress so bar moves even if resource info is sparse
+            const simInterval = setInterval(() => {
+                if (lastProgress < 60) setProgress(lastProgress + (Math.random() * 6 + 2));
+                else if (lastProgress < MAX_BEFORE_DONE) setProgress(lastProgress + (Math.random() * 2 + 0.5));
+            }, 300);
 
-        // readyState listener for major milestones
-        document.addEventListener('readystatechange', () => {
-            if (document.readyState === 'interactive') {
-                setProgress(Math.max(lastProgress, 70));
-            } else if (document.readyState === 'complete') {
+            // readyState listener for major milestones
+            document.addEventListener('readystatechange', () => {
+                if (document.readyState === 'interactive') {
+                    setProgress(Math.max(lastProgress, 70));
+                } else if (document.readyState === 'complete') {
+                    finalize();
+                }
+            });
+
+            // finalizer on window load (most reliable)
+            window.addEventListener('load', finalize);
+
+            // safety timeout
+            const safety = setTimeout(() => {
                 finalize();
+            }, 10000);
+
+            function finalize() {
+                // stop intervals
+                clearInterval(poll);
+                clearInterval(simInterval);
+                clearTimeout(safety);
+
+                // set 100% and fade
+                setProgress(100);
+                loader.style.transition = 'opacity 450ms ease';
+                loader.style.pointerEvents = 'none';
+                setTimeout(() => loader.style.opacity = '0', 80);
+                setTimeout(() => {
+                    if (loader && loader.parentNode) loader.parentNode.removeChild(loader);
+                }, 600);
             }
-        });
-
-        // finalizer on window load (most reliable)
-        window.addEventListener('load', finalize);
-
-        // safety timeout
-        const safety = setTimeout(() => {
-            finalize();
-        }, 10000);
-
-        function finalize(){
-            // stop intervals
-            clearInterval(poll);
-            clearInterval(simInterval);
-            clearTimeout(safety);
-
-            // set 100% and fade
-            setProgress(100);
-            loader.style.transition = 'opacity 450ms ease';
-            loader.style.pointerEvents = 'none';
-            setTimeout(() => loader.style.opacity = '0', 80);
-            setTimeout(() => {
-                if (loader && loader.parentNode) loader.parentNode.removeChild(loader);
-            }, 600);
-        }
-    })();
+        })();
     </script>
 
     <!--Start of Tawk.to Script-->
@@ -1023,6 +1054,16 @@
             s0.parentNode.insertBefore(s1, s0);
         })();
     </script>
+
+    <script>
+        window.addEventListener('load', function () {
+            var s = document.createElement('script');
+            s.src = "https://embed.tawk.to/69230101cd70fb195fa05c46/1jaobnrm2";
+            s.async = true;
+            document.body.appendChild(s);
+        });
+    </script>
+
     <!--End of Tawk.to Script-->
 
     <!-- JS AREAS -->
@@ -1037,9 +1078,6 @@
             offset: 80
         });
     </script>
-
-    
-
 
     <script>
         (function () {
@@ -1160,7 +1198,6 @@
         })();
     </script>
 
-
     <script>
         const btn = document.getElementById('menu-toggle');
         const menu = document.getElementById('menu');
@@ -1211,9 +1248,9 @@
             });
 
             navLinks.forEach(link => {
-                link.classList.remove('underline', 'text-[var(--color-background)]');
+                link.classList.remove('underline', 'text-(--color-background)]');
                 if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('underline', 'text-[var(--color-background)]');
+                    link.classList.add('underline', 'text-(--color-background)]');
                 }
             });
         }

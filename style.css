@@ -285,3 +285,10 @@ body {
   0%,100% { opacity: 0; }
   50% { opacity: 1; }
 }
+
+
+@font-face {
+  font-family: 'tawk-font-icon-3';
+  src: url('https://embed.tawk.to/fonts/tawk-font-icon-3.woff?55755728=') format('woff');
+  font-display: swap !important;
+}
